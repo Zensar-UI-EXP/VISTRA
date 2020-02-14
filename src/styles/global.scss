@@ -1,0 +1,165 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./partials/fonts";
+@import "./partials/grid";
+@import "./partials/mixins";
+@import "./partials/variables";
+@import "./partials/reset";
+@import "./partials/typography";
+@import "./partials/glyphicon";
+@import "./partials/fontawesome";
+@import "../components/atoms/button/button";
+@import "../components/atoms/source/source";
+@import "../components/organisms/header/header";
+@import "../components/molecules/navigation/navigation";
+@import "../components/molecules/logo/logo";
+@import "./home";
+@import "../components/organisms/bannerCarousel/bannerCarousel";
+@import "../components/organisms/trendingCardView/trendingCardView";
+@import "../components/molecules/search/search";
+@import "../components/molecules/submenu/submenu";
+@import "../components/molecules/reviewproduct/reviewproduct";
+@import "../components/molecules/grid/gridList";
+@import "../components/molecules/socialMedia/socialmedia";
+@import "../components/organisms/footer/footer";
+@import "../components/molecules/footerNavigation/footernavigation";
+@import "../components/atoms/title/title";
+@import "../components/molecules/dropdown/dropdown";
+@import "../components/molecules/exploreproduct/exploreproduct";
+// Start:global styling
+.link,
+.link:hover {
+  text-decoration: none;
+}
+
+.fullwidthimage {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  @include media-breakpoint-down(md) {
+    width: 100% !important;
+    position: relative !important;
+    left: inherit !important;
+    margin-top: auto !important;
+  }
+}
+.pos--relative {
+  position: relative;
+}
+.mb--20 {
+  margin-bottom: 20px;
+}
+.highnav {
+  .header__nav {
+    height: 140px;
+    @include media-breakpoint-down(lg) {
+      height: 80px;
+    }
+  }
+  .logo {
+    width: 111px;
+    height: 111px;
+    @include media-breakpoint-down(lg) {
+      width: 70px;
+      height: 70px;
+    }
+  }
+  .home {
+    margin-top: 0px;
+    @include media-breakpoint-down(lg) {
+      margin-top: 80px;
+    }
+  }
+  .search {
+    margin-top: 60px;
+    @include media-breakpoint-down(lg) {
+      margin-top: 0px;
+    }
+  }
+  .submenu {
+    top: 110px;
+    @include media-breakpoint-down(lg) {
+      top: 80px;
+    }
+  }
+}
+.navigation__item.open {
+  .submenu {
+    @include flexbox;
+    @include media-breakpoint-down(md) {
+      display: block;
+    }
+  }
+  .navigation--link {
+    color: $link--hover;
+    border-bottom: 2px solid $text--white;
+    @include media-breakpoint-down(md) {
+      border-bottom: 1px solid $text--white;
+    }
+  }
+}
+.image--overlay {
+  background-color: $submenu--bg;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  @include justify-content(center);
+  @include align-items(center);
+  font-family: $font;
+  padding: 10px;
+  letter-spacing: 1px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: $text--white;
+  text-align: center;
+  @include media-breakpoint-down(sm) {
+    position: relative;
+    background: none;
+    font-size: 14px;
+    display: block;
+    color: $text--default;
+    padding-bottom: 0px !important;
+  }
+}
+.header--center ~ .search {
+  top: 132px;
+  @include media-breakpoint-down(md) {
+    top: 109px;
+  }
+}
+.header--center {
+  @include media-breakpoint-down(md) {
+    .navigation__search {
+      top: -84px;
+      position: absolute;
+      right: 65px;
+    }
+  }
+}
+.highnav {
+  .header--center ~ .search {
+    @include media-breakpoint-down(lg) {
+      margin-top: 46px;
+      top: 80px;
+    }
+    @include media-breakpoint-down(md) {
+      margin-top: 46px;
+      top: 64px;
+    }
+  }
+
+  .header--center {
+    .submenu {
+      @include media-breakpoint-down(lg) {
+        top: 126px;
+      }
+    }
+  }
+}
+.highlightheader .header{
+  background: $app--bg;
+}
+//End: global styling

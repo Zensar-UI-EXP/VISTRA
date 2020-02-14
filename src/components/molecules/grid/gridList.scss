@@ -1,0 +1,115 @@
+.grid {
+  @include flexbox;
+  @include justify-content(center);
+  margin: 20px auto;
+  @include media-breakpoint-down(sm) {
+    @include flex-direction(column);
+    margin: 0px auto;
+  }
+  &__ {
+    &content {
+      @include flexbox;
+      @include flex-direction(column);
+      @include align-items(center);
+      padding: 0px 22px 20px;
+      position: relative;
+      cursor: pointer;
+      :hover {
+        .image--overlay {
+          @include flexbox;
+        }
+      }
+    }
+    &inner {
+      height: 100%;
+      @include flexbox;
+      @include flex-direction(column);
+      @include align-items(center);
+    }
+    &title,
+    &cardtexttitle {
+      font-size: 25px;
+      font-family: $font--semi;
+      margin: 25px auto;
+      @include media-breakpoint-down(sm) {
+        margin: 0px auto 25px;
+      }
+    }
+    &image {
+      width: 304px;
+      height: 201px;
+      vertical-align: middle;
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+        height: auto;
+        margin-bottom: 0px;
+      }
+    }
+    &btn {
+      border-radius: 20px;
+      padding: 9px;
+      border: 2px solid $text--white !important;
+      background-color: transparent;
+      color: $text--white;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-family: $font--semi;
+      width: 125px;
+      text-align: center;
+      margin-top: auto;
+      letter-spacing: 1px;
+      cursor: pointer;
+      &:hover {
+        background-color: $text--white;
+        color: $btn--hover;
+        outline: none;
+      }
+      @include media-breakpoint-down(lg) {
+        // margin-top: 10px;
+        margin-bottom: 30px;
+      }
+    }
+    &cardtextimage {
+      width: 533px;
+      height: 318px;
+      @include media-breakpoint-down(lg) {
+        width: 420px;
+        height: 255px;
+      }
+      @include media-breakpoint-down(md) {
+        width: 305px;
+        height: 205px;
+      }
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+        height: auto;
+      }
+    }
+    &cardtexttitle {
+      font-size: 40px;
+      margin: 55px auto 25px;
+      @include media-breakpoint-down(sm) {
+        margin: 20px 0px 10px 0px;
+        font-size: 1.5rem;
+        color: $text--default;
+      }
+    }
+    &cardinfocontent {
+      margin-bottom: 10px;
+    }
+    &cardtextinfo {
+      font-size: 16px;
+      line-height: 1.7;
+      font-family: $font;
+      letter-spacing: 1px;
+      text-align: center;
+      @include media-breakpoint-down(md) {
+        width: 305px;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 14px;
+        width: auto;
+      }
+    }
+  }
+}

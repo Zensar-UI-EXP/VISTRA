@@ -1,0 +1,12 @@
+.para {
+  &-- {
+    &black {
+      padding: 15px 5px;
+      font-size: 14px;
+      font-family: $font--semi;
+      width: 41px;
+      line-height: 17px;
+      text-align: center;
+    }
+  }
+}

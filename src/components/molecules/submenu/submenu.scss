@@ -1,0 +1,40 @@
+.submenu {
+  width: 100%;
+  background-color: $submenu--bg;
+  display: none;
+  position: absolute;
+  left: 0px;
+  margin: auto;
+  @include justify-content(center);
+  @include align-items(center);
+  height: 50px;
+  top: 78px;
+  z-index: 2;
+  @include media-breakpoint-down(md) {
+    position: relative;
+    top: 0px !important;
+    height: inherit;
+  }
+  &__ {
+    &link {
+      font-size: 14px;
+      font-family: $font--semi;
+      padding: 10px 20px;
+      color: $text--white;
+      @include media-breakpoint-down(md) {
+        display: block;
+        text-align: center;
+        background-color: $link--hover;
+        border-bottom: 1px solid $text--white;
+      }
+    }
+  }
+  &-- {
+    &show {
+      display: block;
+      text-align: center;
+      background-color: $link--hover;
+      border-bottom: 1px solid $text--white;
+    }
+  }
+}

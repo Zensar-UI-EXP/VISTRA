@@ -1,0 +1,46 @@
+.search {
+  width: 100%;
+  position: fixed;
+  text-align: right;
+  background: $text--white;
+  top: 80px;
+  transition: all 200ms ease-in-out;
+  z-index: -1;
+  opacity: 0;
+  display: none;
+  &__ {
+    &content {
+      max-width: $content--width;
+      position: relative;
+      margin: auto;
+    }
+    &input {
+      padding: 24px 60px;
+      font-size: 20px;
+      border: none;
+      text-align: right;
+      color: $input--clr;
+      width: 100%;
+      &:focus {
+        outline: none;
+      }
+    }
+    &icon {
+      position: absolute;
+      right: 10px;
+      font-size: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #005e94;
+      /* line-height: 70px; */
+      font-size: 31px;
+    }
+  }
+  &-- {
+    &active {
+      opacity: 1;
+      z-index: 1;
+      display: block;
+    }
+  }
+}

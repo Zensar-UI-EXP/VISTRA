@@ -1,0 +1,19 @@
+// Typography declaration
+
+body {
+  font-family: $font;
+  font-size: 16px;
+  line-height: 22px;
+  color: $text--default;
+  background: $app--bg;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+h1,
+p {
+  margin: 0px;
+}

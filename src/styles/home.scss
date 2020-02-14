@@ -1,0 +1,21 @@
+.home {
+  margin-top: 0;
+  transition: all 200ms ease-in-out;
+  &__ {
+    &dogfoodlabel {
+      line-height: 27px;
+      font-size: 1.5rem;
+      background: $link--hover;
+      color: $text--white;
+      font-family: $font--semi;
+      text-align: center;
+      padding: 19px;
+      letter-spacing: 1px;
+      max-width: $application-maxwidth;
+      margin: -5px auto 0;
+      @include media-breakpoint-down(sm) {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

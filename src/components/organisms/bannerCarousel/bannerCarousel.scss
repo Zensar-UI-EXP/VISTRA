@@ -1,0 +1,162 @@
+.bannercarsl {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  &__ {
+    &textcontent {
+      position: absolute;
+      z-index: 1;
+      width: 100vw;
+      height: 100%;
+    }
+  }
+  .slick-prev,
+  .slick-next {
+    position: absolute;
+    display: block;
+    height: 44px;
+    width: 26px;
+    line-height: 0px;
+    font-size: 0px;
+    cursor: pointer;
+    background: transparent url(../images/arrow__leftright__sprite.png)
+      no-repeat;
+    @include media-breakpoint-down(md) {
+      background-size: 34px;
+      height: 27px;
+      width: 16px;
+    }
+    color: transparent;
+    top: 50%;
+    margin-top: -22px;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    padding: 0;
+    border: none;
+    outline: none;
+    &::before {
+      content: "";
+    }
+    &:hover,
+    &:focus {
+      outline: none;
+      color: transparent;
+      background: transparent url(../images/arrow__leftright__sprite.png)
+        no-repeat;
+      @include media-breakpoint-down(md) {
+        background-size: 34px;
+        height: 27px;
+        width: 16px;
+      }
+    }
+  }
+  .slick-prev {
+    z-index: 1;
+    left: 30px;
+  }
+  .slick-next {
+    z-index: 1;
+    right: 30px;
+    background-position: 100% top !important;
+  }
+  .slick-dots li {
+    margin: 0;
+  }
+  .slick-dots li button:before {
+    color: rgba(255,255,255,0.55);
+    font-size: 12px;
+    opacity: 1;
+  }
+  .slick-dots li.slick-active button:before {
+    color: #e72095;
+    font-size: 20px;
+  }
+  .slick-dots {
+    bottom: 40px;
+  }
+}
+.bannercarousel {
+  &-- {
+    &center {
+      @include flexbox;
+      @include justify-content(center);
+      @include align-items(center);
+      @include flex-direction(column);
+      .bannercarsl {
+        &__ {
+          &herotext {
+            font-size: 80px;
+            color: $text--white;
+            line-height: 1;
+            margin-bottom: 26px;
+          }
+          &subtext {
+            font-size: 1.4rem;
+            line-height: 1;
+            letter-spacing: 1px;
+            color: $text--white;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+    &left {
+      @include flexbox;
+      @include flex-direction(column);
+      padding-left: 100px;
+      .bannercarsl {
+        &__ {
+          &herotext {
+            font-size: 3vw;
+            color: $text--white;
+            font-family: $font--semi;
+            line-height: 1;
+            margin-bottom: 26px;
+            margin-top: 40px;
+            color: $app--head;
+            max-width: 400px;
+          }
+          &subtext {
+            font-size: 1.4rem;
+            line-height: 1;
+            letter-spacing: 1px;
+            color: $text--white;
+            margin-bottom: 20px;
+            max-width: 400px;
+          }
+        }
+      }
+    }
+    &right {
+      @include flexbox;
+      @include align-items(flex-end);
+      @include flex-direction(column);
+      padding-right: 100px;
+      .bannercarsl {
+        &__ {
+          &herotext {
+            font-size: 3vw;
+            font-family: $font--semi;
+            color: $text--white;
+            line-height: 1;
+            margin-bottom: 26px;
+            margin-top: 40px;
+            color: $app--head;
+            max-width: 400px;
+            text-align: right;
+          }
+          &subtext {
+            font-size: 1.4rem;
+            line-height: 1;
+            letter-spacing: 1px;
+            color: $text--white;
+            margin-bottom: 20px;
+            max-width: 400px;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}

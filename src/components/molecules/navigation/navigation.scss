@@ -1,0 +1,116 @@
+.navigation {
+  width: 100%;
+  @include flexbox;
+  @include align-items(center);
+  &__ {
+    &navbar {
+      @include flexbox;
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 2;
+        display: none;
+      }
+    }
+    &item {
+      padding: 20px 10px;
+      font-family: $font;
+      @include media-breakpoint-down(lg) {
+        padding: 10px 5px;
+      }
+      @include media-breakpoint-down(md) {
+        padding: 0px;
+        background: $app--head;
+      }
+    }
+    &search {
+      padding: 20px 12px;
+      color: $text--white;
+      cursor: pointer;
+      @include media-breakpoint-down(md) {
+        font-size: 18px;
+        padding-left: 24px;
+      }
+    }
+  }
+  &-- {
+    &link {
+      padding: 20px 10px;
+      font-size: 15px;
+      font-family: $font--latoregular;
+      color: $text--white;
+      @include media-breakpoint-down(md) {
+        display: block;
+        border-bottom: 2px solid $text--white;
+        text-align: center;
+      }
+      &:hover {
+        color: $link--hover;
+        border-bottom: 1px solid $text--white;
+        @include media-breakpoint-down(md) {
+          border-bottom: 1px solid $text--white;
+        }
+      }
+    }
+    &nosubmenu {
+      
+    }
+    &mobicross {
+      position: absolute;
+      left: 12px;
+      width: 30px;
+      height: 30px;
+      @include flexbox;
+      @include justify-content(center);
+      @include align-items(center);
+      top: 10px;
+      display: none;
+      z-index: 3;
+    }
+    &mobibar {
+      display: block;
+      height: 3px;
+      background: $text--white;
+      width: 31px;
+      position: absolute;
+      top: 12px;
+      &:nth-child(1) {
+        transform: rotate(45deg);
+      }
+      &:nth-child(2) {
+        transform: rotate(135deg);
+      }
+    }
+    &mobinav {
+      display: block;
+      .navigation--nosubmenu {
+        border-bottom: 1px solid $text--white !important;
+      }
+    }
+  }
+}
+.header--center {
+  .navigation {
+    &__ {
+      &navbar {
+        // width: 100%;
+        @include justify-content(space-around);
+        margin: 0 auto;
+      }
+      &item.open .navigation--link {
+        border: none;
+      }
+    }
+    &-- {
+      &mobicross {
+        display: none;
+      }
+      &link:hover,
+      &link {
+        border: none;
+      }
+    }
+  }
+}

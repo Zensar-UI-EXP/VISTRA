@@ -1,0 +1,21 @@
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.fa-facebook-f:before,
+.fa-facebook:before {
+  content: "\f09a";
+}
+.fa-youtube:before {
+  content: "\f167";
+}
+.fa-instagram:before {
+  content: "\f16d";
+}
+.fa-twitter:before {
+  content: "\f099";
+}

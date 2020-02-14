@@ -1,0 +1,22 @@
+.reviewproduct {
+  padding: 20px 20px;
+  font-size: 1.2rem;
+  font-family: $font--semi;
+  @include flexbox;
+  @include justify-content(center);
+  @include align-items(center);
+  max-width: $application-maxwidth;
+  margin: 0 auto;
+  @include media-breakpoint-down(sm) {
+    @include flex-wrap(wrap);
+  }
+  @include media-breakpoint-down(md) {
+    margin-bottom: 30px;
+  }
+  background: $text--white;
+  text-align: center;
+  &__title {
+    margin: 15px 0px;
+    line-height: 25px;
+  }
+}

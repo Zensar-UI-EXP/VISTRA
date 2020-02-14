@@ -1,0 +1,91 @@
+.header {
+  background: $app--head;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 2;
+  &__ {
+    &search {
+      height: 0px;
+      transition: height 500ms ease-in-out;
+    }
+    &searchactive {
+      height: 71px;
+    }
+    &nav {
+      @include flexbox;
+      @include justify-content(space-between);
+      @include align-items(center);
+      max-width: 95%;
+      margin: auto;
+      transition: height 200ms ease-in-out;
+      @include media-breakpoint-down(lg) {
+        max-width: 930px;
+        padding: 0px 20px;
+      }
+    }
+    &hamburger {
+      min-width: 29px;
+      height: 25px;
+      padding: 3px;
+      display: none;
+      cursor: pointer;
+      @include media-breakpoint-down(md) {
+        display: block;
+      }
+    }
+    &bar {
+      background-color: $text--white;
+      position: relative;
+      height: 3px;
+      border-radius: 3px;
+      width: 27px;
+      display: block;
+      margin-bottom: 4px;
+    }
+    &navcontent {
+      @include flexbox;
+      @include align-items(center);
+    }
+    &svglogo {
+      fill: #ffffff;
+      margin-top: 20px;
+      @include media-breakpoint-down(md) {
+        margin-top: 0px;
+      }
+    }
+  }
+  &-- {
+    &center {
+      height: inherit !important;
+      @include flex-direction(column);
+      @include media-breakpoint-down(md) {
+        @include justify-content(space-between);
+        @include flex-direction(row-reverse);
+        padding: 20px;
+      }
+      .header {
+        &__ {
+          &navcontent {
+            width: 100%;
+            margin: auto;
+            @include media-breakpoint-down(md) {
+              position: absolute;
+              left: 0px;
+              top: 100%;
+            }
+          }
+        }
+      }
+      .header--mobititle {
+        display: none;
+      }
+    }
+    &mobititle {
+      display: none;
+      @include media-breakpoint-down(md) {
+        display: block;
+      }
+    }
+  }
+}

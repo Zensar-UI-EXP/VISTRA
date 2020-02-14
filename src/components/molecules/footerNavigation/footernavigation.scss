@@ -1,0 +1,74 @@
+.footernav {
+  @include flexbox;
+  margin-bottom: 20px;
+  @include flex-wrap(wrap);
+  @include media-breakpoint-down(md) {
+    margin: 0 auto;
+    text-align: left;
+    width: 60%;
+    display: block;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 60%;
+  }
+
+  &__ {
+    &item {
+      @include media-breakpoint-down(md) {
+        margin: 4px auto;
+        text-align: left;
+        width: 55%;
+        float: left;
+        &:nth-child(2n) {
+          width: 45%;
+        }
+      }
+      @include media-breakpoint-down(xs) {
+        width: 100%;
+        &:nth-child(2n) {
+          width: 100%;
+        }
+      }
+    }
+    &btmul {
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        margin: 0px auto;
+        &:nth-child(2n) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &-- {
+    &link {
+      color: $text--default;
+      font-size: 12px;
+      text-transform: uppercase;
+      padding: 10px 10px;
+      font-family: $font--semi;
+      letter-spacing: 1px;
+      &:hover {
+        color: $link--hover;
+      }
+      @include media-breakpoint-down(md) {
+        padding: 2px;
+      }
+    }
+    &underlinelink {
+      font-size: 12px;
+      text-decoration: underline !important;
+      color: $text--white;
+      padding: 10px 10px;
+      font-family: $font;
+      letter-spacing: 1px;
+      line-height: 35px;
+      &:hover {
+        color: $link--hover;
+      }
+      @include media-breakpoint-down(md) {
+        padding: 2px;
+      }
+    }
+  }
+}

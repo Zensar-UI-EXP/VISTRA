@@ -1,0 +1,20 @@
+.footer {
+  max-width: $content--width;
+  margin: auto;
+  padding-bottom: 20px;
+  padding-top: 30px;
+  @include media-breakpoint-down(lg) {
+    max-width: 930px;
+  }
+  &__ {
+    &nav {
+      @include flexbox;
+      @include justify-content(space-between);
+      @include media-breakpoint-down(md) {
+        @include flex-wrap(wrap);
+        @include align-items(center);
+        @include justify-content(center);
+      }
+    }
+  }
+}

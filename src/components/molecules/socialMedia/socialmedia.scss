@@ -1,0 +1,23 @@
+.socialmedia {
+  @include flexbox;
+  margin-left: 80px;
+  @include media-breakpoint-down(md) {
+    margin-left: 0px;
+    @include justify-content(center);
+  }
+  &__ {
+    &icon {
+      background-color: $link--hover;
+      border-radius: 50%;
+      height: 41px;
+      text-align: center;
+      width: 41px;
+      color: $text--white;
+      font-size: 25px;
+      margin: 10px;
+      @include flexbox;
+      @include justify-content(center);
+      @include align-items(center);
+    }
+  }
+}

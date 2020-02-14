@@ -1,0 +1,31 @@
+// Variables
+
+// Font families
+$font: "UI Regular", -apple-system, BlinkMacSystemFont, "Roboto",
+  "Helvetica Neue", sans-serif;
+$font--light: "UI Light", -apple-system, BlinkMacSystemFont, "Roboto",
+  "Helvetica Neue", sans-serif;
+$font--semi: "UI Semibold", -apple-system, BlinkMacSystemFont, "Roboto",
+  "Helvetica Neue", sans-serif;
+$font--bold: "UI Bold", -apple-system, BlinkMacSystemFont, "Roboto",
+  "Helvetica Neue", sans-serif;
+$font--latoregular: "Lato-Regular";
+
+// MWF Font weights
+$bold: 700;
+$semi-bold: 600;
+$normal: 400;
+
+// Colors (You will most likely have to edit these on a project to project basis)
+$text--white: #ffffff;
+$text--default: #000000;
+$app--head: rgba(0,0,0,0.7);
+$app--bg: #FFFFFF;
+$link--hover: #005e94;
+$input--clr: #555555;
+$submenu--bg: rgba(0, 0, 0, 0.5);
+$btn--hover: #808080;
+$text--aquarian: #00a6dc;
+
+$content--width: 1140px;
+$application-maxwidth: 1600px;
