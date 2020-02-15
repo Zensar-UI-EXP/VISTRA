@@ -1,34 +1,55 @@
-import bannerCarouselImage1 from "../images/banner__carousal__1.jpg"
-import bannerCarouselImage2 from "../images/banner__carousal__2.jpg"
-import bannerCarouselImage3 from "../images/banner__carousal__3.jpg"
-import bannerCarouselImage4 from "../images/banner__carousal__4.jpg"
-import bannerCarouselImage5 from "../images/banner__carousal__5.jpg"
-import bannerCarouselImage6 from "../images/banner__carousal__6.jpg"
-import cardimage1 from "../images/card__image__1.png"
-import cardimage2 from "../images/card__image__2.jpg"
-import cardimage3 from "../images/card__image__3.jpg"
-import cardimage4 from "../images/card__image__4.jpg"
-import cardimage5 from "../images/card__image__5.jpg"
-import cardimage6 from "../images/card__image__6.jpg"
-import gettingPuppy from "../images/getting-a-puppy.jpg"
-import howOldYourDog from "../images/how-old-is-your-dog-600.jpg"
-import marsPed from "../images/723013-1-mars-ped-780-x-465_v2.jpg"
-import donate from "../images/donate.jpg"
-import dogWithBoyImage from "../images/dog__with__boy.jpg"
+import bannerCarouselImage1 from "../images/banner__carousal__1.jpg";
+import bannerCarouselImage2 from "../images/banner__carousal__2.jpg";
+import bannerCarouselImage3 from "../images/banner__carousal__3.jpg";
+import bannerCarouselImage4 from "../images/banner__carousal__4.jpg";
+import bannerCarouselImage5 from "../images/banner__carousal__5.jpg";
+import bannerCarouselImage6 from "../images/banner__carousal__6.jpg";
+import cardimage1 from "../images/card__image__1.png";
+import cardimage2 from "../images/card__image__2.jpg";
+import cardimage3 from "../images/card__image__3.jpg";
+import cardimage4 from "../images/card__image__4.jpg";
+import cardimage5 from "../images/card__image__5.jpg";
+import cardimage6 from "../images/card__image__6.jpg";
+import gettingPuppy from "../images/getting-a-puppy.jpg";
+import howOldYourDog from "../images/how-old-is-your-dog-600.jpg";
+import marsPed from "../images/723013-1-mars-ped-780-x-465_v2.jpg";
+import donate from "../images/donate.jpg";
+import dogWithBoyImage from "../images/dog__with__boy.jpg";
 
 const commonText = {
-  btnLabel: "Learn More",
-}
+  btnLabel: "Learn More"
+};
 const colors = {
   white: `#FFFFFF`
-}
+};
 const App = {
+  longCard: {
+    list: [
+      {
+        header: "Client portals",
+        description: `Access our range of online tools and portals designed to help our clients seize opportunities to take their business to the next level.`,
+        link: `Login into your account`
+      },
+      {
+        header: "Professional careers",
+        description: `Your world of opportunity starts here. Realise your full potential and join our diverse global team.`,
+        link: `Roles at Vistra`,
+        image: {
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "50% 50%",
+          backgroundImage:
+            "url(https://www.vistra.com//sites/default/files/2019-03/Careers%20block.jpg)"
+        }
+      }
+    ]
+  },
   header: {
     isSearchRquired: `no`,
     isImageLink: "yes",
     siteTitle: ``,
     logoImage: `https://www.zensar.com/sites/all/themes/new_zensar/img/ZensarLogo.png`,
-    logoCustomStyle: { width: `130px`, height: `62px` }, 
+    logoCustomStyle: { width: `130px`, height: `62px` },
     bgImage: `<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 247.3 35.7" style="width: 25vw;height: 4.5vw;">
       <title>Aquarian</title>
       <g>
@@ -53,7 +74,7 @@ const App = {
           { label: "Customer Experience Transformation", to: "/" },
           { label: "Agile IT Modernization", to: "/" },
           { label: "Living AI", to: "/" }
-        ],
+        ]
       },
       {
         label: "Services",
@@ -65,49 +86,54 @@ const App = {
           { label: "Customer Experience Transformation", to: "/" },
           { label: "Agile IT Modernization", to: "/" },
           { label: "Living AI", to: "/" }
-        ],
+        ]
       },
       {
         label: "Digital Consulting",
         to: "/",
-        submenu: [],
+        submenu: []
       },
       {
         label: "Alliances",
         to: "/",
-        submenu: [],
+        submenu: []
       },
       {
         label: "Investors",
         to: "/",
-        submenu: [],
+        submenu: []
       },
-      { label: "Insights", to: "/", 
+      {
+        label: "Insights",
+        to: "/",
         submenu: [
           { label: "Digital Supply Chain", to: "/" },
           { label: "Enterprise Analytics", to: "/" },
           { label: "Customer Experience Transformation", to: "/" },
           { label: "Agile IT Modernization", to: "/" },
           { label: "Living AI", to: "/" }
-        ] 
+        ]
       },
-      { label: "About Us", to: "/", 
+      {
+        label: "About Us",
+        to: "/",
         submenu: [
           { label: "Digital Supply Chain", to: "/" },
           { label: "Enterprise Analytics", to: "/" },
           { label: "Customer Experience Transformation", to: "/" },
           { label: "Agile IT Modernization", to: "/" },
           { label: "Living AI", to: "/" }
-        ] 
-      },
-    ],
+        ]
+      }
+    ]
   },
   trendcard: {
     heading: "Now Trending",
-    overallCustomStyle: {background: colors.white},
-    contentCustomStyle: {width: `90%`},
-    cardListCustomStyle: {width: `95%`},
-    cardlist: [{
+    overallCustomStyle: { background: colors.white },
+    contentCustomStyle: { width: `90%` },
+    cardListCustomStyle: { width: `95%` },
+    cardlist: [
+      {
         image: cardimage1,
         cardDescription: `Zensar Recognized as a Leader in the ISG Provider Lens™ ‘Digital Workplace of the Future’ Report`,
         cardDate: "Feb 05, 2020",
@@ -163,7 +189,7 @@ const App = {
     contentAlignment: `imagecont--rightcenter`,
     imageStyle: {},
     contentStyle: {},
-    buttonType: `btn--guide`,
+    buttonType: `btn--guide`
   },
   defaultVideoPath:
     "https://aquarian.co.uk/wp-content/uploads/2018/04/home_final.mp4",
@@ -172,20 +198,20 @@ const App = {
     imageWithSubHeading:
       "Whether you’re new to fishkeeping or simply want to reacquaint yourself with the basics, the Guide to Fish will give you a useful overview of how to best care for and feed your aquarium friends.",
     buttonLabel: "Browse the Guide",
-    imageWithContent: "yes",
+    imageWithContent: "yes"
   },
   foodLabel: {
     label: "Dog food, care resources, and more for healthy, happy dogs",
-    className: "home__dogfoodlabel",
+    className: "home__dogfoodlabel"
   },
   reviewrproduct: {
     label: "Share your opinion  on your favorite PEDIGREE® products.",
     className: "reviewproduct__title",
     options: [
       {
-        label: "Review a product",
-      },
-    ],
+        label: "Review a product"
+      }
+    ]
   },
   banner: {
     data: [
@@ -195,7 +221,7 @@ const App = {
       { image: bannerCarouselImage4 },
       { image: bannerCarouselImage5 },
       { image: bannerCarouselImage6 }
-    ],
+    ]
   },
   overlayCard: {
     cards: [
@@ -204,16 +230,16 @@ const App = {
         image: gettingPuppy,
         alt: "Getting a Puppy",
         overlay: `Get tips from our experts on choosing and caring for your new puppy.`,
-        ...commonText,
+        ...commonText
       },
       {
         titleLabel: "How Old Is Your Dog?",
         alt: "How Old Is Your Dog",
         image: howOldYourDog,
         overlay: `Try our dog age calculator to see how old your dog is in human years.`,
-        ...commonText,
-      },
-    ],
+        ...commonText
+      }
+    ]
   },
   cardWithText: {
     cardType: 2,
@@ -224,16 +250,16 @@ const App = {
         image: marsPed,
         alt: "Our Products",
         info: [`Check out our full line of dry food,`, `wet food and treats!`],
-        ...commonText,
+        ...commonText
       },
       {
         titleLabel: "Donate",
         image: donate,
         alt: "Donate",
         info: [`Donate to help feed more shelter dogs in need.`],
-        ...commonText,
-      },
-    ],
+        ...commonText
+      }
+    ]
   },
   footer: [
     {
@@ -242,27 +268,27 @@ const App = {
       navigation: [
         {
           label: "Buy Now",
-          to: "/",
+          to: "/"
         },
         {
           label: "FAQs",
-          to: "/",
+          to: "/"
         },
         {
           label: "About Us",
-          to: "/",
+          to: "/"
         },
         {
           label: "Contact Us",
-          to: "/",
+          to: "/"
         },
         {
           label: "Foundation",
-          to: "/",
+          to: "/"
         },
         { label: "Location Selector", to: "/" },
-        { label: "Sitemap", to: "/" },
-      ],
+        { label: "Sitemap", to: "/" }
+      ]
     },
     {
       parentClassName: "footernav__btmul",
@@ -270,29 +296,29 @@ const App = {
       navigation: [
         {
           label: "Privacy Policy",
-          to: "/",
+          to: "/"
         },
         {
           label: "Cookies Notice",
-          to: "/",
+          to: "/"
         },
         {
           label: "Cookie Settings",
-          to: "/",
+          to: "/"
         },
         {
           label: "Legal",
-          to: "/",
+          to: "/"
         },
         {
           label: "Modern Slavery Act",
-          to: "/",
+          to: "/"
         },
         { label: "Supply Chain Transparency", to: "/" },
         { label: "Ad Choices", to: "/" },
-        { label: "Accessibility", to: "/" },
-      ],
-    },
+        { label: "Accessibility", to: "/" }
+      ]
+    }
   ],
   explore: {
     label: `EXPLORE OUR PRODUCTS`,
@@ -334,7 +360,7 @@ const App = {
       <path class="st4106" d="M259.3,207.3V70.9C218.7,70.3,139.7,73,84.1,99c-78,36.4-70.2,47.8-70.2,47.8c6.9,9.9,16.4,16.7,24.4,21.1                  l6.7,27.4c2.6-10.2,3-17.6,2.3-23c4.3,1.8,7.1,2.6,7.1,2.6C86.6,190.8,178.8,202,259.3,207.3z M156.4,118.2                  c26.6,34.8-6.8,58.2-6.8,58.2C173.5,149.9,156.4,118.2,156.4,118.2z M103.9,113.5c8,0,14.6,6.5,14.6,14.6s-6.5,14.6-14.6,14.6                  c-8,0-14.6-6.5-14.6-14.6S95.8,113.5,103.9,113.5z"></path>
     </g>
   </g>
-  </svg>`,
+  </svg>`
       },
       {
         label: `Goldfish`,
@@ -359,7 +385,7 @@ const App = {
           </rect>
           <path class="st3" d="M145.1,27.3c-11.6,8.2-17.8,17.6-20.1,22c-3.8-2.1-8.2-3.9-12.8-5.6c4.1-3.7,9-6,9-6                            c-4.8-4.8-3.6-14.4-16.8-21.9C91.2,8.4,81.3,12,81.3,12c-5.6,1.3-10.1,5-13.7,9.2c2.5-8.3,6.3-13.1,6.3-13.1                            c-12.2,6.2-15.8,18.6-16.7,28c-6.9,1.5-13.5,4.4-19.4,8C37,44,36.3,44,35.6,44C21.1,44,9.3,55.7,9.3,70.3                            c0,13.4,10.1,24.5,23.1,26.1c9.4,7.4,21.7,12.9,34.4,12c3.7-0.2,7-0.7,10.2-1.3c2.1,7.9,9,27.3,27.1,29.7c0,0,21.3-2.7,21.6-11.4                            c0.3-8.7-0.9-13.8,4.2-15c0,0-10.9-5.8-23.5-5.4l15.4-1.2c0,0-14.1-3.8-27.3-2.7c16.9-8.9,24-23.6,33.7-31.8                            c0.7,4.7,4.8,9.7,10.3,14.4c1.9,2.7,4.2,5.6,6.6,8.5V27.3z M29.5,69.8c-3.1,0-5.7-2.6-5.7-5.7c0-3.1,2.6-5.7,5.7-5.7                            c3.1,0,5.7,2.6,5.7,5.7C35.2,67.3,32.6,69.8,29.5,69.8z M50.5,74.3c0,0.4-0.1,0.9-0.2,1.3c0,0.2-0.1,0.4-0.1,0.7                            c0,0.2-0.1,0.5-0.1,0.7c-0.1,0.4-0.2,0.9-0.4,1.3l-0.2,0.7c-0.1,0.2-0.2,0.4-0.3,0.6c-0.2,0.4-0.4,0.8-0.6,1.3                            c-0.2,0.4-0.5,0.8-0.7,1.2c-0.3,0.4-0.5,0.7-0.8,1.1c-0.3,0.3-0.6,0.7-0.9,1c-0.3,0.3-0.6,0.6-0.9,0.8c-0.3,0.2-0.6,0.5-0.9,0.7                            c-0.3,0.2-0.6,0.4-0.9,0.6c-0.3,0.2-0.6,0.3-0.9,0.5c-0.1,0.1-0.3,0.1-0.4,0.2C42,86.9,41.9,87,41.8,87c-0.5,0.2-1,0.4-1.4,0.5                            c-0.4,0.1-0.7,0.2-0.9,0.2c-0.2,0-0.3,0.1-0.3,0.1s0.1-0.1,0.2-0.2c0.2-0.1,0.4-0.3,0.7-0.6c0.3-0.2,0.6-0.6,1-0.9                            c0.2-0.2,0.4-0.4,0.6-0.6c0.2-0.2,0.4-0.4,0.6-0.6c0.2-0.2,0.4-0.5,0.7-0.7c0.2-0.3,0.4-0.5,0.6-0.8c0.2-0.3,0.4-0.6,0.6-0.9                            c0.2-0.3,0.4-0.6,0.6-0.9c0.2-0.3,0.4-0.6,0.6-1c0.1-0.2,0.2-0.3,0.3-0.5c0.1-0.2,0.2-0.3,0.3-0.5c0.2-0.4,0.3-0.7,0.5-1.1                            c0.1-0.2,0.1-0.4,0.2-0.6l0.2-0.6c0.1-0.4,0.2-0.8,0.4-1.1c0.1-0.4,0.2-0.8,0.3-1.2c0.2-0.8,0.3-1.6,0.4-2.3                            c0.1-0.4,0.1-0.8,0.2-1.1c0-0.4,0.1-0.7,0.1-1.1c0.1-0.7,0.1-1.4,0.2-2c0.1-1.3,0.1-2.4,0.1-3.1c0-0.8,0-1.2,0-1.2s0.2,0.4,0.5,1.1                            c0.2,0.4,0.3,0.8,0.5,1.3c0.2,0.5,0.3,1.1,0.5,1.8c0.1,0.7,0.3,1.4,0.3,2.2c0.1,0.8,0.1,1.6,0.1,2.5C50.5,73.4,50.5,73.8,50.5,74.3                            z"></path>
         </g>
-      </svg>`,
+      </svg>`
       },
       {
         label: `Holiday Feeder`,
@@ -381,7 +407,7 @@ const App = {
                 <rect x="77.2" y="76.8" class="st2107" width="106.3" height="106.3"></rect>
             </g>
         </g>
-        </svg>`,
+        </svg>`
       },
       {
         label: `Tropical`,
@@ -410,7 +436,7 @@ const App = {
               <path class="st3101" d="M259.9,103.5c-7.3,8.6-12.7,16.6-15.2,20.4c-18.1-12.5-45.4-30-72.4-42.6c8.9-10.8,29.9-15.6,29.9-15.6                  c-43.4,3-30.1-51.3-30.1-51.3c-32.9,15.8-53.1,40.8-60.6,51.5c-50.5,3.5-96.9,48.8-96.9,73.4c0,25.5,50,73.5,102.7,73.6                  c7.1,8.6,21.7,25.6,30.6,32.3c0,0-2.9-15.1,2.5-25.3c2.2-4.3,1.1-9.1-1.9-12.9c32.4-10.8,69.5-34,93.3-50.2                  c5.1,9,11.5,15.6,18.1,20.5V103.5z M62.2,137.9c-7.2,0-13.1-5.9-13.1-13.1c0-7.2,5.9-13.1,13.1-13.1c7.2,0,13.1,5.9,13.1,13.1                  C75.3,132,69.4,137.9,62.2,137.9z M106.7,133.3c0,0.7-0.1,1.4-0.2,2.1c-0.1,1.4-0.3,2.8-0.6,4.2c-0.2,1.4-0.6,2.8-0.9,4.1                  c-0.4,1.3-0.8,2.6-1.3,3.9c-0.5,1.2-1,2.5-1.6,3.6c-0.6,1.1-1.2,2.3-1.8,3.3c-0.7,1-1.3,2-2,2.9c-0.7,0.9-1.4,1.7-2.1,2.5                  c-0.7,0.8-1.4,1.5-2.1,2.2c-0.3,0.3-0.7,0.6-1,1c-0.3,0.3-0.6,0.6-1,0.9c-1.3,1-2.4,2-3.5,2.6c-1,0.6-1.8,1.1-2.4,1.4                  c-0.6,0.3-0.9,0.5-0.9,0.5s0.2-0.3,0.5-0.9c0.3-0.5,0.8-1.4,1.4-2.3c0.6-1,1.3-2.2,2.1-3.6c0.4-0.7,0.8-1.4,1.2-2.2                  c0.4-0.8,0.9-1.6,1.2-2.4c0.4-0.9,0.8-1.7,1.2-2.7c0.4-1,0.7-1.9,1.1-2.9c0.3-1,0.7-2,1-3.1c0.3-1.1,0.6-2.1,0.9-3.2                  c0.2-1.1,0.5-2.2,0.7-3.4c0.1-0.6,0.2-1.2,0.2-1.7c0.1-0.6,0.2-1.2,0.2-1.8c0.1-1.2,0.2-2.4,0.3-3.6c0-0.6,0.1-1.2,0.1-1.8l0-1.8                  c0.1-1.2-0.1-2.4-0.1-3.7c-0.1-1.2-0.1-2.4-0.3-3.6c-0.2-2.4-0.6-4.8-0.9-7.1c-0.2-1.2-0.4-2.3-0.6-3.4c-0.2-1.1-0.4-2.2-0.7-3.3                  c-0.5-2.1-1-4.2-1.5-6.1c-1-3.8-1.9-6.9-2.6-9.2c-0.7-2.3-1.1-3.6-1.1-3.6s1,0.9,2.6,2.7c0.8,0.9,1.7,2,2.7,3.4                  c1,1.3,2,2.9,3.1,4.7c1,1.8,2.1,3.7,3.1,5.9c1,2.2,1.9,4.5,2.7,7c0.4,1.2,0.8,2.5,1,3.8c0.3,1.3,0.6,2.7,0.8,4                  c0.1,0.7,0.2,1.4,0.3,2.1c0.1,0.7,0.2,1.4,0.2,2.1c0.1,1.4,0.2,2.8,0.2,4.3L106.7,133.3z"></path>
             </g>
           </g>
-        </svg>`,
+        </svg>`
       },
       {
         label: `Water Care`,
@@ -441,10 +467,10 @@ const App = {
                     c0.5-0.5,0.5-1.4,0-1.9C202.2,115,201.4,115,200.8,115.5z"></path>
             </g>
         </g>
-        </svg>`,
-      },
-    ],
-  },
-}
+        </svg>`
+      }
+    ]
+  }
+};
 
-export default App
+export default App;

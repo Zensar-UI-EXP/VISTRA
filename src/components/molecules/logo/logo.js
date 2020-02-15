@@ -1,8 +1,7 @@
-import React from "react"
-import LinkComponent from "../../atoms/link"
+import React from "react";
+import LinkComponent from "../../atoms/link";
 
 const Logo = props => {
-  console.log(props);
   return (
     <h1 className="logo" style={props.logoCustomStyle}>
       <LinkComponent
@@ -12,12 +11,12 @@ const Logo = props => {
         className="logo__link"
       />
     </h1>
-  )
-}
+  );
+};
 
 Logo.defaultProps = {
   linkClassName: ``,
-  linkValue: ``,
-}
+  linkValue: ``
+};
 
-export default Logo
+export default Logo;

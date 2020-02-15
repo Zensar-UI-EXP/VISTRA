@@ -25,6 +25,7 @@
 @import "../components/atoms/title/title";
 @import "../components/molecules/dropdown/dropdown";
 @import "../components/molecules/exploreproduct/exploreproduct";
+@import "../components/organisms/longCard/longCard";
 // Start:global styling
 .link,
 .link:hover {
@@ -159,7 +160,7 @@
     }
   }
 }
-.highlightheader .header{
+.highlightheader .header {
   background: $app--bg;
 }
 //End: global styling

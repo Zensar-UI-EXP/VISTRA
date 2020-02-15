@@ -1,5 +1,5 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 
 import {
   Layout,
@@ -8,7 +8,8 @@ import {
   BannerCarousel,
   TrendingCardView,
   appData,
-} from "../index"
+  LongCard
+} from "../index";
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -19,7 +20,7 @@ const IndexPage = () => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <Layout>
@@ -27,10 +28,11 @@ const IndexPage = () => {
       <Header siteTitle={data.site.siteMetadata.title} {...appData.header} />
       <div className="home">
         <BannerCarousel {...appData.banner} />
-        <TrendingCardView {...appData.trendcard}/>
+        <TrendingCardView {...appData.trendcard} />
+        <LongCard {...appData.longCard} />
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
