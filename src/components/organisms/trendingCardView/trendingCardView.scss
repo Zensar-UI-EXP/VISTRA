@@ -1,0 +1,75 @@
+.trendcard{
+    &__{
+        &content{
+            margin: 0 auto;
+        }
+        &heading{
+            padding-bottom: 50px;
+            position: relative;
+            font-family: $font--latoLight;
+            font-weight: 400;
+            font-size: 36px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            &::after {
+                content: "";
+                width: 90px;
+                height: 1px;
+                background: #c6c6c6;
+                bottom: 34px;
+                left: 0;
+                position: absolute;
+            }
+        }
+        &cardlist{
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        &imgcont{
+            position: relative;
+        }
+        &label{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 10px;
+            color: $text--white;
+            background: #2d2e30;
+            font-size: 16px;
+            font-family: $font--latoLight;
+            margin: 0;
+        }
+        &img{
+            vertical-align: bottom;
+        }
+        &list{
+            padding-bottom: 30px;
+            position: relative;
+            webkit-box-shadow: 2px 11px 30px -17px rgba(0,0,0,0.23);
+            -moz-box-shadow: 2px 11px 30px -17px rgba(0,0,0,0.23);
+            box-shadow: 2px 11px 30px -17px rgba(0,0,0,0.23);
+            flex-basis: 30%;
+            margin-bottom: 30px;
+            &::after{
+                position: absolute;
+                content: "";
+                border: solid 15px;
+                border-color: transparent #06d1df #06d1df transparent;
+                bottom: 0;
+                right: 0;
+            }
+        }
+        &imgcont{
+            margin-bottom: 30px;
+        }
+        &desc, &date{
+            font-family: $font--latoregular;
+            font-size: 16px;
+            line-height: 1.5em;
+            margin: 0;
+            padding: 0 30px;
+        }
+    }
+}

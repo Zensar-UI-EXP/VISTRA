@@ -4,6 +4,12 @@ import bannerCarouselImage3 from "../images/banner__carousal__3.jpg"
 import bannerCarouselImage4 from "../images/banner__carousal__4.jpg"
 import bannerCarouselImage5 from "../images/banner__carousal__5.jpg"
 import bannerCarouselImage6 from "../images/banner__carousal__6.jpg"
+import cardimage1 from "../images/card__image__1.png"
+import cardimage2 from "../images/card__image__2.jpg"
+import cardimage3 from "../images/card__image__3.jpg"
+import cardimage4 from "../images/card__image__4.jpg"
+import cardimage5 from "../images/card__image__5.jpg"
+import cardimage6 from "../images/card__image__6.jpg"
 import gettingPuppy from "../images/getting-a-puppy.jpg"
 import howOldYourDog from "../images/how-old-is-your-dog-600.jpg"
 import marsPed from "../images/723013-1-mars-ped-780-x-465_v2.jpg"
@@ -99,7 +105,50 @@ const App = {
   trendcard: {
     heading: "Now Trending",
     overallCustomStyle: {background: colors.white},
-    contentCustomStyle: {width: `90%`}
+    contentCustomStyle: {width: `90%`},
+    cardListCustomStyle: {width: `95%`},
+    cardlist: [{
+        image: cardimage1,
+        cardDescription: `Zensar Recognized as a Leader in the ISG Provider Lens™ ‘Digital Workplace of the Future’ Report`,
+        cardDate: "Feb 05, 2020",
+        cardLabel: "Press Releases"
+      },
+      {
+        image: cardimage2,
+        cardDescription: `Digital deal sizes are increasing for midsize IT services firms`,
+        cardDate: "Nov 14, 2019",
+        cardLabel: "News"
+      },
+      {
+        image: cardimage3,
+        cardDescription: `CPX 360 2020`,
+        cardDate: "Jan 27, 2020",
+        cardLabel: "Events"
+      },
+      {
+        image: cardimage4,
+        cardDescription: `#PressRelease: Zensar’s #IoT enabled #retail solutions include Smart Cart, Smart Shelf, Smart Store and Smart Window. Read more:
+        Sandeep Kishore #Manhmomentum`,
+        cardDate: "",
+        cardLabel: ""
+      },
+      {
+        image: cardimage5,
+        cardDescription: `@ISG_News report mentions that Zensar's Vinci™ #automation platform provides predictive analytics, self-heal, #UX and sentiment analysis, Win10 and O365 automated migration and intelligent collaboration across devices and platforms.
+        https://t.co/B44TPQXiLQ
+        #DFSisHOW https://t.co/1h6nuQM5Oj`,
+        cardDate: "",
+        cardLabel: ""
+      },
+      {
+        image: cardimage6,
+        cardDescription: `Hyperconverged Infrastructure integrates every node of enterprise IT, delivering exceptional flexibility, scalability and speed. Read this #blog to gain actionable insights.
+        https://zensar.co/2GvbGqc
+        #DFSisHOW #digitalinfrastructure #DigitalFoundation`,
+        cardDate: "",
+        cardLabel: ""
+      }
+    ]
   },
   fullWithImage: {
     src: dogWithBoyImage,
