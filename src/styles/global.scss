@@ -26,6 +26,9 @@
 @import "../components/molecules/dropdown/dropdown";
 @import "../components/molecules/exploreproduct/exploreproduct";
 @import "../components/organisms/longCard/longCard";
+@import "../components/organisms/connectLayout/connectLayout";
+@import "../components/organisms/questionLayout/questionLayout";
+@import "../components/organisms/infoLayout/infoLayout";
 // Start:global styling
 .link,
 .link:hover {
@@ -163,4 +166,6 @@
 .highlightheader .header {
   background: $app--bg;
 }
-//End: global styling
+.clr--both {
+  clear: both;
+}
