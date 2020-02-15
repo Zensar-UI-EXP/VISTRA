@@ -10,6 +10,7 @@ import cardimage3 from "../images/card__image__3.jpg"
 import cardimage4 from "../images/card__image__4.jpg"
 import cardimage5 from "../images/card__image__5.jpg"
 import cardimage6 from "../images/card__image__6.jpg"
+import connectimage from "../images/connect_grow.png"
 import gettingPuppy from "../images/getting-a-puppy.jpg"
 import howOldYourDog from "../images/how-old-is-your-dog-600.jpg"
 import marsPed from "../images/723013-1-mars-ped-780-x-465_v2.jpg"
@@ -20,7 +21,8 @@ const commonText = {
   btnLabel: "Learn More",
 }
 const colors = {
-  white: `#FFFFFF`
+  white: `#FFFFFF`,
+  blue: `#261138`
 }
 const App = {
   header: {
@@ -106,7 +108,6 @@ const App = {
     heading: "Now Trending",
     overallCustomStyle: {background: colors.white},
     contentCustomStyle: {width: `90%`},
-    cardListCustomStyle: {width: `95%`},
     cardlist: [{
         image: cardimage1,
         cardDescription: `Zensar Recognized as a Leader in the ISG Provider Lens™ ‘Digital Workplace of the Future’ Report`,
@@ -149,6 +150,36 @@ const App = {
         cardLabel: ""
       }
     ]
+  },
+  connectlayout:{
+    heading: "Connect, Grow and...",
+    description: "Bring your passion to work and accelerate your career at Zensar",
+    buttonLabel: "Current Opportunities",
+    overallCustomStyle: {background: colors.blue},
+    contentCustomStyle: {width: `90%`},
+    btnClassName: "btn--transparent",
+    image: connectimage
+  },
+  questionLayout: {
+    overallCustomStyle: {background: colors.blue},
+    contentCustomStyle: {width: `90%`},
+    leftcontent: {
+      heading: "Sample left heading",
+      description: "Sample description text, please edit and replace",
+      buttonLabel: "Left button",
+      callLink: "1234567890"
+    },
+    rightcontent: {
+      heading: "Sample right heading",
+      description: "",
+      buttonLabel: "Right button",
+      callLink: "1234567890"
+    }
+  },
+  infoLayout: {
+    overallCustomStyle: {background: colors.blue},
+    contentCustomStyle: {width: `90%`},
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non ex porttitor, accumsan augue quis, vestibulum mauris. Nunc aliquam sagittis turpis vel semper. Ut eu orci non lacus pellentesque sollicitudin tempus quis nunc. Quisque fermentum, dolor nec vulputate egestas, est sem euismod orci, vitae lacinia ligula quam at elit. Nulla facilisi. Duis nunc nisl, tempor a pharetra at, pulvinar vel sapien. Praesent sagittis posuere magna nec condimentum. Sed maximus congue mauris efficitur tristique. In vestibulum egestas scelerisque. Ut eget felis odio. Phasellus et massa nunc."
   },
   fullWithImage: {
     src: dogWithBoyImage,

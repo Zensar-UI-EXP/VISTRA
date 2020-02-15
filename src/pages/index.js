@@ -7,6 +7,9 @@ import {
   Header,
   BannerCarousel,
   TrendingCardView,
+  ConnectLayout,
+  QuestionLayout,
+  InfoLayout,
   appData,
 } from "../index"
 
@@ -27,7 +30,10 @@ const IndexPage = () => {
       <Header siteTitle={data.site.siteMetadata.title} {...appData.header} />
       <div className="home">
         <BannerCarousel {...appData.banner} />
+        <InfoLayout {...appData.infoLayout}/>
         <TrendingCardView {...appData.trendcard}/>
+        <ConnectLayout {...appData.connectlayout}/>
+        <QuestionLayout {...appData.questionLayout}/>
       </div>
     </Layout>
   )

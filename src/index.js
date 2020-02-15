@@ -10,6 +10,10 @@ import Header from "./components/organisms/header/header"
 import Exploreproduct from "./components/molecules/exploreproduct/exploreproduct"
 import BannerCarousel from "./components/organisms/bannerCarousel/bannerCarousel"
 import TrendingCardView from "./components/organisms/trendingCardView/trendingCardView"
+import ConnectLayout from "./components/organisms/connectLayout/connectLayout"
+import QuestionLayout from "./components/organisms/questionLayout/questionLayout"
+import InfoLayout from "./components/organisms/infoLayout/infoLayout"
+
 import appData from "./assets/app"
 
 export {
@@ -26,4 +30,7 @@ export {
   appData,
   Image,
   TrendingCardView,
+  ConnectLayout,
+  QuestionLayout,
+  InfoLayout
 }

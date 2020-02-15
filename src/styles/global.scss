@@ -25,6 +25,9 @@
 @import "../components/atoms/title/title";
 @import "../components/molecules/dropdown/dropdown";
 @import "../components/molecules/exploreproduct/exploreproduct";
+@import "../components/organisms/connectLayout/connectLayout";
+@import "../components/organisms/questionLayout/questionLayout";
+@import "../components/organisms/infoLayout/infoLayout";
 // Start:global styling
 .link,
 .link:hover {
@@ -161,5 +164,8 @@
 }
 .highlightheader .header{
   background: $app--bg;
+}
+.clr--both{
+  clear: both;
 }
 //End: global styling
