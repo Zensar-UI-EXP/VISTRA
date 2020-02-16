@@ -1,46 +1,58 @@
-import PropTypes from "prop-types"
-import React, { useEffect, useState } from "react"
-import Navigation from "../../molecules/navigation/navigation"
-import Logo from "../../molecules/logo/logo"
-import Icon from "../../atoms/icon"
-import Title from "../../atoms/title/title"
-import Search from "../../molecules/search/search"
-import Link from "../../atoms/link"
-
+import PropTypes from "prop-types";
+import React, { useEffect, useState } from "react";
+import Navigation from "../../molecules/navigation/navigation";
+import Logo from "../../molecules/logo/logo";
+import Icon from "../../atoms/icon";
+import Title from "../../atoms/title/title";
+import Search from "../../molecules/search/search";
+import Link from "../../atoms/link";
 const Header = props => {
-  const [menuActive, setmenuActive] = useState("")
-  const [searchActive, setSearchActive] = useState("")
+  const [menuActive, setmenuActive] = useState("");
+  const [searchActive, setSearchActive] = useState("");
   useEffect(() => {
     document.addEventListener("scroll", () => {
       // checkScrollState()
-    })
+    });
     // checkScrollState()
-  })
+  });
   const checkScrollState = () => {
     if (window.pageYOffset == 0) {
-      document.body.classList.add("highnav")
+      document.body.classList.add("highnav");
     } else {
-      document.body.classList.remove("highnav")
+      document.body.classList.remove("highnav");
     }
-  }
+  };
 
   const toggleMobileMenu = () => {
     if (!menuActive) {
-      setmenuActive("navigation--mobinav")
+      setmenuActive("navigation--mobinav");
     } else {
-      setmenuActive("")
+      setmenuActive("");
     }
-  }
+  };
   const toggleSearch = () => {
     if (!searchActive) {
-      setSearchActive("search--active")
+      setSearchActive("search--active");
     } else {
-      setSearchActive("")
+      setSearchActive("");
     }
-  }
+  };
 
   return (
     <header className="header" style={props.headerStyle}>
+      <div>
+        {props.isLiteNavigation == "yes" ? (
+          <Navigation
+            className="header__litenav"
+            data={props.liteNav}
+            toggle={menuActive}
+            fontColor={props.liteFontColor}
+            liteNavigationStyle={props.liteNavigationStyle}
+          />
+        ) : (
+          ""
+        )}
+      </div>
       <div className={`header__nav ${props.headerType}`}>
         <div className="header__hamburger" onClick={toggleMobileMenu}>
           <span className="header__bar"></span>
@@ -81,13 +93,13 @@ const Header = props => {
       </div>
       {props.isSearchRquired == "yes" && <Search searchActive={searchActive} />}
     </header>
-  )
-}
+  );
+};
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+  siteTitle: PropTypes.string
+};
 
-Header.defaultProps = {}
+Header.defaultProps = {};
 
-export default Header
+export default Header;

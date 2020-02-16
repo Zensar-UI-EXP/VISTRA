@@ -55,7 +55,6 @@
       }
     }
     &nosubmenu {
-      
     }
     &mobicross {
       position: absolute;
@@ -111,6 +110,31 @@
       &link {
         border: none;
       }
+    }
+  }
+}
+.header {
+  &__litenav {
+    @include media-breakpoint-down(lg) {
+      max-width: 930px;
+      padding: 0px 20px;
+    }
+    max-width: 95%;
+    margin: auto;
+    .navigation {
+      &__item {
+        padding: 10px 10px;
+      }
+      &--link {
+        color: #ded1c1;
+        padding: 10px 10px;
+      }
+      &--link:hover {
+        border-bottom: none;
+      }
+    }
+    .navigation__item.open .navigation--link {
+      border-bottom: none;
     }
   }
 }

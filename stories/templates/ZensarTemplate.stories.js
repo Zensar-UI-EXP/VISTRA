@@ -62,12 +62,16 @@ storiesOf("templates/Zensar Template", module)
       headerGroupName
     );
 
-    const headingColorLabel = "Choose Background Color";
+    const headingColorLabel = "Background Style";
     const headingColorDefaultValue = "#ffb10e";
-    header.headerStyle.backgroundColor = text(
-      headingColorLabel,
-      appData.header.headerStyle.backgroundColor,
-      headerGroupName
+    header.headerStyle = JSON.parse(
+      htmlDecode(
+        text(
+          headingColorLabel,
+          JSON.stringify(appData.header.headerStyle),
+          headerGroupName
+        )
+      )
     );
     const headingFontColorLabel = "Font Color";
     const headingFontColorDefaultValue = "#ffb10e";
@@ -105,7 +109,7 @@ storiesOf("templates/Zensar Template", module)
           Yes: "yes",
           No: "no"
         },
-        "yes",
+        "no",
         headerGroupName
       );
     }
@@ -115,12 +119,13 @@ storiesOf("templates/Zensar Template", module)
       No: "no"
     };
     const subMenuDefaultValue = header.headerType !== "default" ? "yes" : "no";
-    const subMenuRequired = radios(
-      subMenuLabel,
-      subMenuOptions,
-      subMenuDefaultValue,
-      headerGroupName
-    );
+    const subMenuRequired = "no";
+    // radios(
+    //   subMenuLabel,
+    //   subMenuOptions,
+    //   subMenuDefaultValue,
+    //   headerGroupName
+    // );
 
     const menuListLabel = "Menu List Number";
     const menuListDefault = 7;
@@ -146,6 +151,7 @@ storiesOf("templates/Zensar Template", module)
         subMenuRequired
       };
     };
+
     for (let i = 0; i < menuListOutput; i++) {
       let newObj = createObject(
         appData.header.data[i] ? appData.header.data[i].label : `Menu ${i + 1}`,
@@ -178,6 +184,78 @@ storiesOf("templates/Zensar Template", module)
       headerGroupName
     );
     header.data = menuInput;
+
+    let logoCustomStyle = JSON.parse(
+      htmlDecode(
+        text(
+          `Header Logo style`,
+          `${JSON.stringify(appData.header.logoCustomStyle)}`,
+          headerGroupName
+        )
+      )
+    );
+
+    let menuLiteInput = [];
+    header.isLiteNavigation = radios(
+      `Top Lite navigation required`,
+      {
+        Yes: "yes",
+        No: "no"
+      },
+      "no",
+      headerGroupName
+    );
+
+    header.logoCustomStyle = logoCustomStyle;
+    if (header.isLiteNavigation == "yes") {
+      const menuLiteNavigationLabel = "Top Lite Menu List Number";
+      const menuLiteListDefault = 4;
+      const menuLiteOption = {
+        range: false,
+        min: 3,
+        max: 10,
+        step: 1
+      };
+      let menuLiteOutput = number(
+        menuLiteNavigationLabel,
+        menuLiteListDefault,
+        menuLiteOption,
+        headerGroupName
+      );
+      for (let i = 0; i < menuLiteOutput; i++) {
+        let newObj = createObject(
+          appData.header.liteNav[i]
+            ? appData.header.liteNav[i].label
+            : `Top Lite Menu ${i + 1}`,
+          `Top Lite Menu ${i + 1}`,
+          `/`,
+          appData.header.liteNav[i]
+            ? appData.header.liteNav[i].submenu
+            : [{ label: "Sub Menu", to: "/" }],
+          subMenuRequired
+        );
+        menuLiteInput.push(newObj);
+        menuLiteInput[i].label = text(
+          `${menuLiteInput[i].labelName}`,
+          `${menuLiteInput[i].label}`,
+          headerGroupName
+        );
+      }
+      header.liteNav = menuLiteInput;
+      let liteNavigationStyle = text(
+        `Top Lite Menu`,
+        `${JSON.stringify(appData.header.liteNavigationStyle)}`,
+        headerGroupName
+      );
+      header.liteNavigationStyle = JSON.parse(htmlDecode(liteNavigationStyle));
+
+      let liteFontColor = text(
+        `Top Lite Font color`,
+        `${appData.header.liteFontColor}`,
+        headerGroupName
+      );
+      header.liteFontColor = liteFontColor;
+    }
 
     const carouselGroupName = "Banner Carousel Component";
     const carouselComponentLabel = "Do you want the banner carousel component?";
@@ -287,7 +365,6 @@ storiesOf("templates/Zensar Template", module)
         }
       }
     }
-
 
     let finalOutPutProps = {
       header: header,

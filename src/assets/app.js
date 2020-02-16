@@ -10,7 +10,7 @@ import cardimage3 from "../images/card__image__3.jpg";
 import cardimage4 from "../images/card__image__4.jpg";
 import cardimage5 from "../images/card__image__5.jpg";
 import cardimage6 from "../images/card__image__6.jpg";
-import connectimage from "../images/connect_grow.png"
+import connectimage from "../images/connect_grow.png";
 import gettingPuppy from "../images/getting-a-puppy.jpg";
 import howOldYourDog from "../images/how-old-is-your-dog-600.jpg";
 import marsPed from "../images/723013-1-mars-ped-780-x-465_v2.jpg";
@@ -64,30 +64,56 @@ const App = {
       </g>
     </svg>`,
     fontColor: colors.white,
-    headerStyle: { backgroundColor: `rgba(0,0,0,0.7)`, position: "fixed" },
+    liteFontColor: "#ded1c1",
+    headerStyle: {
+      backgroundColor: `rgba(0,0,0,0.7)`,
+      position: "fixed",
+      width: "100%",
+      margin: "0px"
+    },
+    isLiteNavigation: "no",
+    liteNavigationStyle: {
+      justifyContent: "flex-end"
+    },
+    liteNav: [
+      {
+        label: "Contact",
+        to: "/",
+        submenu: []
+      },
+      {
+        label: "Careers",
+        to: "/",
+        submenu: []
+      },
+      {
+        label: "Client portal",
+        to: "/",
+        submenu: []
+      },
+      {
+        label: "EN | English",
+        to: "/",
+        submenu: []
+      }
+    ],
     data: [
       {
         label: "Solutions",
         to: "/",
         subMenuRequired: "yes",
-        submenu: [
-          { label: "Digital Supply Chain", to: "/" },
-          { label: "Enterprise Analytics", to: "/" },
-          { label: "Customer Experience Transformation", to: "/" },
-          { label: "Agile IT Modernization", to: "/" },
-          { label: "Living AI", to: "/" }
-        ]
+        submenu: []
       },
       {
         label: "Services",
         to: "/",
         subMenuRequired: "yes",
         submenu: [
-          { label: "Digital Supply Chain", to: "/" },
-          { label: "Enterprise Analytics", to: "/" },
-          { label: "Customer Experience Transformation", to: "/" },
-          { label: "Agile IT Modernization", to: "/" },
-          { label: "Living AI", to: "/" }
+          // { label: "Digital Supply Chain", to: "/" },
+          // { label: "Enterprise Analytics", to: "/" },
+          // { label: "Customer Experience Transformation", to: "/" },
+          // { label: "Agile IT Modernization", to: "/" },
+          // { label: "Living AI", to: "/" }
         ]
       },
       {
@@ -216,10 +242,10 @@ const App = {
       {
         heading: "Solutions",
         linklist: [
-          "Digital Consulting", 
-          "Digital Supply Chain", 
-          "Living Digital", 
-          "Enterprise Analytics", 
+          "Digital Consulting",
+          "Digital Supply Chain",
+          "Living Digital",
+          "Enterprise Analytics",
           "Customer Experience Transformation"
         ]
       },
@@ -228,7 +254,7 @@ const App = {
         linklist: [
           "Outcome Based Managed Services",
           "Robotic Process Automation",
-          "Oracle", 
+          "Oracle",
           "Digital Workplace",
           "Experience Services",
           "Managed Commerce Services",
@@ -250,7 +276,7 @@ const App = {
         linklist: [
           "Press Releases",
           "News",
-          "Media Kit", 
+          "Media Kit",
           "Events",
           "Webinars",
           "Video Gallery",
@@ -262,7 +288,7 @@ const App = {
         linklist: [
           "Our Story",
           "Contact Us",
-          "CSR", 
+          "CSR",
           "Accreditations & Certifications",
           "Careers",
           "Investors"

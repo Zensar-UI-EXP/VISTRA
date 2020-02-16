@@ -1,39 +1,39 @@
-import React from "react"
-import { storiesOf } from "@storybook/react"
+import React from "react";
+import { storiesOf } from "@storybook/react";
 import {
   withKnobs,
   number,
   text,
   radios,
   color,
-  select,
-} from "@storybook/addon-knobs"
-import { withA11y } from '@storybook/addon-a11y';
+  select
+} from "@storybook/addon-knobs";
+import { withA11y } from "@storybook/addon-a11y";
 
-import Header from "../../src/components/organisms/header/header"
+import Header from "../../src/components/organisms/header/header";
 
 storiesOf("organisms/Header", module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add("default", () => {
     let header = {
-      headerStyle: {},
-    }
+      headerStyle: {}
+    };
     // "https://www.mars.com/sites/g/files/jydpyr316/files/Mars%20Wordmark%20RGB%20Blue.png"
     header.isImageLink = radios(
       `Logo Type`,
       { "image url": `yes`, svg: `no` },
       `yes`
-    )
+    );
     function htmlDecode(input) {
-      var e = document.createElement("div")
-      e.innerHTML = input
-      return e.childNodes[0].nodeValue
+      var e = document.createElement("div");
+      e.innerHTML = input;
+      return e.childNodes[0].nodeValue;
     }
     if (header.isImageLink == "yes") {
       let defaultValue =
-        "https://www.pedigree.com/images/default-source/default-album/pedigree-logo.png"
-      header.bgImage = text("Image url", defaultValue)
+        "https://www.pedigree.com/images/default-source/default-album/pedigree-logo.png";
+      header.bgImage = text("Image url", defaultValue);
     } else {
       var defaultSvgValue = `<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 247.3 35.7" style="width: 25vw;height: 4.5vw;">
         <title>Aquarian</title>
@@ -45,16 +45,16 @@ storiesOf("organisms/Header", module)
           <path class="st0333" d="M164.6,30.6c-1.8-0.7-3.7-2.6-5.7-5.6l-5.6-7.7c3.6-1.1,6.4-4.5,6.4-8.1c0-3.3-1.6-5.9-4.8-7.4                      c-2.3-1.1-5-1.1-7.3-1.1h-14.9c0,0-0.1,0-0.1,0c-0.3,0-0.5,0.2-0.5,0.5c0,0.3,0.2,0.5,0.5,0.5h0c0.1,0,0.4,0,0.7,0.4                      c0.5,0.5,1.3,1.9,1.3,5.6v17c0,0.3,0,0.5,0,0.8c0,1.3,0,2.6-0.4,3.6c-0.7-0.9-1.6-2.4-2.4-4.6c0,0-4.4-10.6-7.7-18.6                      c-1.9-4.5-6.6-5.2-9.3-5.2c-2.8,0-5,0-5,0c-0.2,0-0.5,0.2-0.5,0.4c0,0.2,0.1,0.5,0.3,0.6c0.1,0,1.4,0.5,1.3,2.2                      c-0.1,0.7-0.5,1.9-0.8,2.8c-0.1,0.3-0.2,0.5-0.2,0.7l-6.9,18.2c-0.7,1.8-1.3,3.2-2.4,4.2c-0.9-1.1-0.9-2.7-0.8-4.4                      c0-0.3,0-0.5,0-0.8v-17c0-4.5-2-6.9-5.6-6.9h-6.5c-0.2,0-0.4,0.2-0.5,0.4c-0.1,0.2,0.1,0.5,0.3,0.6c2.2,1.1,2.2,3.7,2.2,6v12.5                      c0,3.1,0,5.9-4.1,5.9c-3.7,0-4.1-3.2-4.1-6V7.8c0-1.6-0.4-6.9-5.5-6.9h-6.8c-0.2,0-0.4,0.2-0.5,0.4c0,0.2,0.1,0.5,0.3,0.6                      c2.1,0.9,2.4,3.4,2.4,5.9v14.4c0,2.9,0.2,5.3,2.5,7.5c2.4,2.3,5.5,2.7,7.7,2.7c3.2,0,6.2-1.3,8.3-3.5c0.1,0.4,0.3,0.9,0.7,1.4                      c0.9,1,2.3,1.5,4.3,1.5c2.1,0,3.7,0,4.9,0c0,0,0,0,0,0h3.9c2.1,0,4.4-1.4,5.1-3.1c0.4-0.9,0.9-2.3,1.3-3.2l1.1-2.8h9.2l1.5,4.1                      c1.3,3.4,3.5,5,7.2,5c1.4,0,2.9,0,4.1,0c0,0,0,0,0,0h6.6c5.2,0,5.2-4.7,5.2-7v-4.6l3.6,5.8c2,3.4,6.5,5.8,10.7,5.8                      c0.3,0,0.5,0,0.8,0l4.3-0.3c0.2,0,0.4-0.2,0.5-0.4S164.8,30.7,164.6,30.6z M149.5,10.2c0,2.4-1.8,4.5-4.4,5.2V6.2                      c0.9,0,1.9,0.1,2.6,0.6C148.8,7.5,149.5,8.8,149.5,10.2z M118.3,17.5h-5.4l2.6-7.1L118.3,17.5z"></path>
           <path class="st0333" d="M74.8,33.7c-3.9-1-6.2-4.1-5.5-7.3c0-0.2,0-0.4-0.2-0.5s-0.4-0.1-0.5,0C63,29.1,58,30.6,53.8,30.2                      c8.8-0.5,15-6.3,15-14.1C68.8,8.2,62.4,0,51.5,0C41,0,33.3,6.8,33.3,16.1c0,7.5,4.7,13.5,13.1,16.7c5.1,2,11.9,2.8,17.9,2.8                      c4,0,7.7-0.4,10.5-1c0.2-0.1,0.4-0.3,0.4-0.5C75.2,33.9,75.1,33.7,74.8,33.7z M52,29.9C52,29.9,52,29.9,52,29.9                      c-1.6-0.3-3.1-1-4.3-2.1c-4.9-4-5.5-11.6-3.7-16.6c1.5-4.1,4.4-6.4,7.9-6.4c3.7,0,6.8,3.1,7.8,8c1.3,5.7-0.5,13.3-7.5,16.5                      C52,29.4,51.9,29.7,52,29.9z"></path>
         </g>
-      </svg>`
-      header.bgImage = htmlDecode(text("Svg code", defaultSvgValue))
+      </svg>`;
+      header.bgImage = htmlDecode(text("Svg code", defaultSvgValue));
     }
 
-    const headingColorLabel = "Choose Background Color"
-    const headingColorDefaultValue = "#ffb10e"
+    const headingColorLabel = "Choose Background Color";
+    const headingColorDefaultValue = "#ffb10e";
     header.headerStyle.backgroundColor = text(
       headingColorLabel,
       headingColorDefaultValue
-    )
+    );
     // header.headerStyle.position = radios(
     //   `Position`,
     //   { fixed: `fixed`, relative: `relative` },
@@ -65,72 +65,73 @@ storiesOf("organisms/Header", module)
       "Header Type",
       ["default", "header--center"],
       "default"
-    )
+    );
     if (header.headerType == "default") {
       header.isSearchRquired = radios(
         `Search required`,
         {
           Yes: "yes",
-          No: "no",
+          No: "no"
         },
         "no"
-      )
+      );
     }
-    const subMenuLabel = "Sub Menu"
+    const subMenuLabel = "Sub Menu";
     const subMenuOptions = {
       Yes: "yes",
-      No: "no",
-    }
-    const subMenuDefaultValue = "no"
-    const subMenuRequired = radios(
-      subMenuLabel,
-      subMenuOptions,
-      subMenuDefaultValue
-    )
+      No: "no"
+    };
+    const subMenuDefaultValue = "no";
+    const subMenuRequired = subMenuDefaultValue;
+    // const subMenuRequired = radios(
+    //   subMenuLabel,
+    //   subMenuOptions,
+    //   subMenuDefaultValue
+    // )
 
-    const menuListLabel = "Menu List Number"
-    const menuListDefault = 5
+    const menuListLabel = "Menu List Number";
+    const menuListDefault = 5;
     const menuListNumberOption = {
       range: false,
       min: 3,
       max: 10,
-      step: 1,
-    }
+      step: 1
+    };
     let menuListOutput = number(
       menuListLabel,
       menuListDefault,
       menuListNumberOption
-    )
-    let menuInput = []
+    );
+    let menuInput = [];
     let createObject = (label, labelName, to, submenu, subMenuRequired) => {
       return {
         label,
         labelName,
         to,
         submenu,
-        subMenuRequired,
-      }
-    }
+        subMenuRequired
+      };
+    };
     for (let i = 0; i < menuListOutput; i++) {
       let subMenuList = [
         { label: "Dry Dog Foods", to: "/" },
         { label: "Wet Dog Foods", to: "/" },
         { label: "Dog Treats", to: "/" },
-        { label: "All Dog Foods", to: "/" },
-      ]
+        { label: "All Dog Foods", to: "/" }
+      ];
       let newObj = createObject(
         `Menu ${i + 1}`,
         `Menu ${i + 1}`,
         `/`,
         subMenuList,
         subMenuRequired
-      )
-      menuInput.push(newObj)
+      );
+      menuInput.push(newObj);
       menuInput[i].label = text(
         `${menuInput[i].labelName}`,
         `${menuInput[i].label}`
-      )
+      );
     }
-    header.data = menuInput
-    return <Header {...header} logoImage={header.bgImage} />
-  })
+    header.data = menuInput;
+    return <Header {...header} logoImage={header.bgImage} />;
+  });

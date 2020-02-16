@@ -1,25 +1,28 @@
-import React, { useState } from "react"
-import LinkComponent from "../../atoms/link"
-import Submenu from "../submenu/submenu"
+import React, { useState } from "react";
+import LinkComponent from "../../atoms/link";
+import Submenu from "../submenu/submenu";
 
 const Navigation = props => {
-  const [submenuActive, setSubmenuActive] = useState({ 0: "" })
+  const [submenuActive, setSubmenuActive] = useState({ 0: "" });
   const manuActive = (index, isEnter, isClick) => {
     if (window.innerWidth > 991 && !isClick) {
       if (isEnter) {
-        setSubmenuActive({ [index]: "open" })
+        setSubmenuActive({ [index]: "open" });
       } else {
-        setSubmenuActive({ [index]: "" })
+        setSubmenuActive({ [index]: "" });
       }
     } else if (isClick) {
       for (let val in submenuActive) {
-        setSubmenuActive({ [val]: "" })
+        setSubmenuActive({ [val]: "" });
       }
-      setSubmenuActive({ [index]: "open" })
+      setSubmenuActive({ [index]: "open" });
     }
-  }
+  };
   return (
-    <nav className="navigation">
+    <nav
+      className={`navigation ${props.className}`}
+      style={props.liteNavigationStyle}
+    >
       <div
         className={`navigation--mobicross ${props.toggle}`}
         onClick={props.mobiToggle}
@@ -32,7 +35,7 @@ const Navigation = props => {
           <li
             style={{
               paddingLeft: props.menuSpacing,
-              paddinRight: props.menuSpacing,
+              paddinRight: props.menuSpacing
             }}
             key={index}
             className={`navigation__item ${submenuActive[index]}`}
@@ -54,7 +57,7 @@ const Navigation = props => {
         ))}
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;
