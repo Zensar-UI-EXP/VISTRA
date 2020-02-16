@@ -10,6 +10,7 @@ import cardimage3 from "../images/card__image__3.jpg";
 import cardimage4 from "../images/card__image__4.jpg";
 import cardimage5 from "../images/card__image__5.jpg";
 import cardimage6 from "../images/card__image__6.jpg";
+import connectimage from "../images/connect_grow.png"
 import gettingPuppy from "../images/getting-a-puppy.jpg";
 import howOldYourDog from "../images/how-old-is-your-dog-600.jpg";
 import marsPed from "../images/723013-1-mars-ped-780-x-465_v2.jpg";
@@ -130,7 +131,6 @@ const App = {
   },
   trendcard: {
     heading: "Now Trending",
-
     overallCustomStyle: { background: colors.white },
     contentCustomStyle: { width: `90%` },
     cardlist: [
@@ -208,6 +208,67 @@ const App = {
     contentCustomStyle: { width: `90%` },
     desc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non ex porttitor, accumsan augue quis, vestibulum mauris. Nunc aliquam sagittis turpis vel semper. Ut eu orci non lacus pellentesque sollicitudin tempus quis nunc. Quisque fermentum, dolor nec vulputate egestas, est sem euismod orci, vitae lacinia ligula quam at elit. Nulla facilisi. Duis nunc nisl, tempor a pharetra at, pulvinar vel sapien. Praesent sagittis posuere magna nec condimentum. Sed maximus congue mauris efficitur tristique. In vestibulum egestas scelerisque. Ut eget felis odio. Phasellus et massa nunc."
+  },
+  listFooter: {
+    overallCustomStyle: { background: colors.blue },
+    contentCustomStyle: { width: `90%` },
+    sectionList: [
+      {
+        heading: "Solutions",
+        linklist: [
+          "Digital Consulting", 
+          "Digital Supply Chain", 
+          "Living Digital", 
+          "Enterprise Analytics", 
+          "Customer Experience Transformation"
+        ]
+      },
+      {
+        heading: "Services",
+        linklist: [
+          "Outcome Based Managed Services",
+          "Robotic Process Automation",
+          "Oracle", 
+          "Digital Workplace",
+          "Experience Services",
+          "Managed Commerce Services",
+          "Advanced Data Warehousing"
+        ]
+      },
+      {
+        heading: "Insights",
+        linklist: [
+          "Analyst Insights",
+          "Whitepapers",
+          "Case Studies",
+          "Zenlabs",
+          "Blogs"
+        ]
+      },
+      {
+        heading: "Media",
+        linklist: [
+          "Press Releases",
+          "News",
+          "Media Kit", 
+          "Events",
+          "Webinars",
+          "Video Gallery",
+          "Advanced Data Warehousing"
+        ]
+      },
+      {
+        heading: "About Us",
+        linklist: [
+          "Our Story",
+          "Contact Us",
+          "CSR", 
+          "Accreditations & Certifications",
+          "Careers",
+          "Investors"
+        ]
+      }
+    ]
   },
   fullWithImage: {
     src: dogWithBoyImage,

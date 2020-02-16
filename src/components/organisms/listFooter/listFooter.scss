@@ -1,0 +1,39 @@
+.listfooter{
+    padding: 30px 0;
+    margin: 10px 0 0;
+    &__{
+        &inner{
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        &listheading{
+            color: $text--white;
+            font-size: 18px;
+            padding-bottom: 20px;
+            font-weight: 600;
+            font-family: $font--latoregular;
+        }
+        &list{
+            padding: 5px 0px;
+        }
+        &lslink{
+            color: $text--white;
+            font-family: $font--latoregular;
+            font-weight: 100;
+            font-size: 12px;
+            -webkit-transition: .15s;
+            -moz-transition: .15s;
+            -o-transition: .15s;
+            transition: .15s;
+            -webkit-transition-property: letter-spacing;
+            -moz-transition-property: letter-spacing;
+            -o-transition-property: letter-spacing;
+            transition-property: letter-spacing;
+            text-decoration: none;
+            &:hover{
+                opacity: 0.7;
+            }
+        }
+    }
+}

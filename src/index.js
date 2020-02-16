@@ -14,6 +14,7 @@ import ConnectLayout from "./components/organisms/connectLayout/connectLayout";
 import QuestionLayout from "./components/organisms/questionLayout/questionLayout";
 import InfoLayout from "./components/organisms/infoLayout/infoLayout";
 import LongCard from "./components/organisms/longCard/longCard";
+import ListFooter from "./components/organisms/listFooter/listFooter";
 import appData from "./assets/app";
 
 export {
@@ -33,5 +34,6 @@ export {
   LongCard,
   ConnectLayout,
   QuestionLayout,
-  InfoLayout
+  InfoLayout,
+  ListFooter
 };

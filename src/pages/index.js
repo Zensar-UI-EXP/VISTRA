@@ -11,7 +11,8 @@ import {
   QuestionLayout,
   InfoLayout,
   appData,
-  LongCard
+  LongCard,
+  ListFooter
 } from "../index";
 
 const IndexPage = () => {
@@ -36,6 +37,7 @@ const IndexPage = () => {
         <LongCard {...appData.longCard} />
         <ConnectLayout {...appData.connectlayout} />
         <QuestionLayout {...appData.questionLayout} />
+        <ListFooter {...appData.listFooter} />
       </div>
     </Layout>
   );
