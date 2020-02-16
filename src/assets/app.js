@@ -22,7 +22,9 @@ const commonText = {
 };
 const colors = {
   white: `#FFFFFF`,
-  blue: `#261138`
+  blue: `#261138`,
+  black: `#000000`,
+  grey: `#2d2e30`
 };
 const App = {
   longCard: {
@@ -159,31 +161,46 @@ const App = {
     heading: "Now Trending",
     overallCustomStyle: { background: colors.white },
     contentCustomStyle: { width: `90%` },
+    cardListCustomStyle: { width: `90%` },
+    headingCustomStyle: { color: colors.black },
+    cardCustomStyle:  { background: colors.white, color: colors.black },
+    cardListLabelCustomStyle: { background: colors.blue},
+    cardDateCustomStyle: {color: colors.black},
+    cardDetailDescCustomStyle: {color: colors.grey},
+    cardLinkCustomStyle: {color: colors.black},
     cardlist: [
       {
         image: cardimage1,
         cardDescription: `Zensar Recognized as a Leader in the ISG Provider Lens™ ‘Digital Workplace of the Future’ Report`,
         cardDate: "Feb 05, 2020",
-        cardLabel: "Press Releases"
+        cardLabel: "Press Releases",
+        link: "Read More",
+        cardDetailDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non ex porttitor, accumsan augue quis, vestibulum mauris. Nunc aliquam sagittis turpis vel semper. Ut eu orci non lacus pellentesque sollicitudin tempus quis nunc. Quisque fermentum, dolor nec vulputate egestas, est sem euismod orci, vitae lacinia ligula quam at elit. Nulla facilisi. Duis nunc nisl, tempor a pharetra at, pulvinar vel sapien. Praesent sagittis posuere magna nec condimentum. Sed maximus congue mauris efficitur tristique."
       },
       {
         image: cardimage2,
         cardDescription: `Digital deal sizes are increasing for midsize IT services firms`,
         cardDate: "Nov 14, 2019",
-        cardLabel: "News"
+        cardLabel: "News",
+        link: "Read More",
+        cardDetailDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non ex porttitor, accumsan augue quis, vestibulum mauris. Nunc aliquam sagittis turpis vel semper. Ut eu orci non lacus pellentesque sollicitudin tempus quis nunc. Quisque fermentum, dolor nec vulputate egestas, est sem euismod orci, vitae lacinia ligula quam at elit. Nulla facilisi. Duis nunc nisl, tempor a pharetra at, pulvinar vel sapien. Praesent sagittis posuere magna nec condimentum. Sed maximus congue mauris efficitur tristique."
       },
       {
         image: cardimage3,
         cardDescription: `CPX 360 2020`,
         cardDate: "Jan 27, 2020",
-        cardLabel: "Events"
+        cardLabel: "Events",
+        link: "Read More",
+        cardDetailDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non ex porttitor, accumsan augue quis, vestibulum mauris. Nunc aliquam sagittis turpis vel semper. Ut eu orci non lacus pellentesque sollicitudin tempus quis nunc. Quisque fermentum, dolor nec vulputate egestas, est sem euismod orci, vitae lacinia ligula quam at elit. Nulla facilisi. Duis nunc nisl, tempor a pharetra at, pulvinar vel sapien. Praesent sagittis posuere magna nec condimentum. Sed maximus congue mauris efficitur tristique."
       },
       {
         image: cardimage4,
         cardDescription: `#PressRelease: Zensar’s #IoT enabled #retail solutions include Smart Cart, Smart Shelf, Smart Store and Smart Window. Read more:
         Sandeep Kishore #Manhmomentum`,
         cardDate: "",
-        cardLabel: ""
+        cardLabel: "",
+        link: "Read More",
+        cardDetailDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non ex porttitor, accumsan augue quis, vestibulum mauris. Nunc aliquam sagittis turpis vel semper. Ut eu orci non lacus pellentesque sollicitudin tempus quis nunc. Quisque fermentum, dolor nec vulputate egestas, est sem euismod orci, vitae lacinia ligula quam at elit. Nulla facilisi. Duis nunc nisl, tempor a pharetra at, pulvinar vel sapien. Praesent sagittis posuere magna nec condimentum. Sed maximus congue mauris efficitur tristique."
       },
       {
         image: cardimage5,
@@ -191,7 +208,9 @@ const App = {
         https://t.co/B44TPQXiLQ
         #DFSisHOW https://t.co/1h6nuQM5Oj`,
         cardDate: "",
-        cardLabel: ""
+        cardLabel: "",
+        link: "Read More",
+        cardDetailDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non ex porttitor, accumsan augue quis, vestibulum mauris. Nunc aliquam sagittis turpis vel semper. Ut eu orci non lacus pellentesque sollicitudin tempus quis nunc. Quisque fermentum, dolor nec vulputate egestas, est sem euismod orci, vitae lacinia ligula quam at elit. Nulla facilisi. Duis nunc nisl, tempor a pharetra at, pulvinar vel sapien. Praesent sagittis posuere magna nec condimentum. Sed maximus congue mauris efficitur tristique."
       },
       {
         image: cardimage6,
@@ -199,7 +218,9 @@ const App = {
         https://zensar.co/2GvbGqc
         #DFSisHOW #digitalinfrastructure #DigitalFoundation`,
         cardDate: "",
-        cardLabel: ""
+        cardLabel: "",
+        link: "Read More",
+        cardDetailDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non ex porttitor, accumsan augue quis, vestibulum mauris. Nunc aliquam sagittis turpis vel semper. Ut eu orci non lacus pellentesque sollicitudin tempus quis nunc. Quisque fermentum, dolor nec vulputate egestas, est sem euismod orci, vitae lacinia ligula quam at elit. Nulla facilisi. Duis nunc nisl, tempor a pharetra at, pulvinar vel sapien. Praesent sagittis posuere magna nec condimentum. Sed maximus congue mauris efficitur tristique."
       }
     ]
   },
@@ -211,7 +232,9 @@ const App = {
     overallCustomStyle: { background: colors.blue },
     contentCustomStyle: { width: `90%` },
     btnClassName: "btn--transparent",
-    image: connectimage
+    image: connectimage,
+    imageVideo: "Image",
+    videoSrc: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   questionLayout: {
     overallCustomStyle: { background: colors.blue },
