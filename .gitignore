@@ -6,7 +6,8 @@
 /out-tsc
 # Only exists if Bazel was run
 /bazel-out
-.cache
+.cache/
+.cache/redux.state
 package-lock.json
 # dependencies
 /node_modules
