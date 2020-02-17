@@ -11,7 +11,7 @@ const ListFooter = props => {
               <li className="listfooter__list" key={index}>
                 <a
                   className="listfooter__lslink"
-                  href="javascript:void(0);"
+                  href="/"
                   title={list}
                 >
                   {list}

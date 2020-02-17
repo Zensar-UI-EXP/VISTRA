@@ -34,7 +34,7 @@ const TrendingCardView = props => {
                 ) : (
                   ""
                 )}
-                <a style={props.cardLinkCustomStyle} className="trendcard__readmorelink" href="javascript:void(0);" title={item.link}>
+                <a style={props.cardLinkCustomStyle} className="trendcard__readmorelink" href="/" title={item.link}>
                   {item.link}
                 </a>
               </div>
