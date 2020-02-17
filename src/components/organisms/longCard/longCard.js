@@ -6,7 +6,9 @@ const longCard = props => {
   return (
     <div className="longcard">
       {props.list.map((item, index) => (
-        <div key={index} className="longcard__content" style={item.image}>
+        <div key={index} className="longcard__content" style={{backgroundImage: `url(${item.imageUrl})`, backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "50% 50%",}}>
           <div>
             <p className="longcard__header">{item.header}</p>
           </div>

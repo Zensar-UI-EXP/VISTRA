@@ -26,25 +26,22 @@ const colors = {
   black: `#000000`,
   grey: `#2d2e30`
 };
+
 const App = {
   longCard: {
+    
     list: [
       {
         header: "Client portals",
         description: `Access our range of online tools and portals designed to help our clients seize opportunities to take their business to the next level.`,
-        link: `Login into your account`
+        link: `Login into your account`,
+        imageUrl: '',
       },
       {
         header: "Professional careers",
         description: `Your world of opportunity starts here. Realise your full potential and join our diverse global team.`,
         link: `Roles at Vistra`,
-        image: {
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "50% 50%",
-          backgroundImage:
-            "url(https://www.vistra.com//sites/default/files/2019-03/Careers%20block.jpg)"
-        }
+        imageUrl: 'https://www.vistra.com//sites/default/files/2019-03/Careers%20block.jpg',
       }
     ]
   },
