@@ -9,7 +9,7 @@ storiesOf("organisms/Long Card", module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add("default", () => {
-    let createObject = (header, description, link, imageUrl, image) => {
+    let createLongObject = (header, description, link, imageUrl, image) => {
         return {
           header,
           description,
@@ -21,7 +21,7 @@ storiesOf("organisms/Long Card", module)
     const card = []
     for (var i = 0; i < 2; i++) {
         
-      let newObj = createObject(
+      let newObj = createLongObject(
         appData.longCard.list[i] ? appData.longCard.list[i].header : `Header ${i + 1}`,
         appData.longCard.list[i] ? appData.longCard.list[i].description : `Description ${i + 1}`,
         appData.longCard.list[i] ? appData.longCard.list[i].link:`Link Text ${i + 1}`,

@@ -2,7 +2,6 @@ import React from "react";
 import Title from "../../atoms/title/title";
 
 const longCard = props => {
-  console.log(props.list);
   return (
     <div className="longcard">
       {props.list.map((item, index) => (

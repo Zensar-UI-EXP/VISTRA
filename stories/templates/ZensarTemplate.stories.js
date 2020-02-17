@@ -23,6 +23,7 @@ import Footer from "../../src/components/organisms/footer/footer";
 import InfoLayout from "../../src/components/organisms/infoLayout/infoLayout";
 import TrendingCardView from "../../src/components/organisms/trendingCardView/trendingCardView";
 import ConnectLayout from "../../src/components/organisms/connectLayout/connectLayout";
+import LongCard from "../../src/components/organisms/longCard/longCard"
 import appData from "../../src/assets/app";
 import SEO from "../../src/components/organisms/seo";
 
@@ -602,10 +603,66 @@ storiesOf("templates/Zensar Template", module)
       }
       connectLayoutdata.btnClassName = "btn--transparent";
     }
-    
+
+
+    const longCardGroupName = "Two Card Component";
+    const  longCardComponentLabel = "Do you want the two card component?";
+    let longCardComponent = options(
+      longCardComponentLabel,
+      generalOptions,
+      generalOptions.No,
+      inlineRadioOptionObj,
+      longCardGroupName
+    );
+    let createLongObject = (header, description, link, imageUrl, image) => {
+      return {
+        header,
+        description,
+        link,
+        imageUrl,
+        image
+      };
+    };
+  
+    const longCard = {
+      list: []
+    }
+  const cardList = []
+  if(longCardComponent === generalOptions.Yes) {
+
+    for (var i = 0; i < 2; i++) {
+          
+        let newObj = createLongObject(
+          appData.longCard.list[i] ? appData.longCard.list[i].header : `Header ${i + 1}`,
+          appData.longCard.list[i] ? appData.longCard.list[i].description : `Description ${i + 1}`,
+          appData.longCard.list[i] ? appData.longCard.list[i].link:`Link Text ${i + 1}`,
+          appData.longCard.list[i] ? appData.longCard.list[i].imageUrl:``,
+          appData.longCard.list[i].image
+        );
+        cardList.push(newObj)
+        cardList[i].header = text(
+          `Header ${i + 1}`,
+          appData.longCard.list[i].header,
+          longCardGroupName
+        );
+        cardList[i].description = text(
+          `Description ${i + 1}`,
+          appData.longCard.list[i].description,
+          longCardGroupName
+        );
+        cardList[i].link = text(
+          `Link ${i + 1}`,
+          appData.longCard.list[i].link,
+          longCardGroupName
+        );
+        cardList[i].imageUrl = text(`Image ${i + 1}`,appData.longCard.list[i].imageUrl, longCardGroupName)
+        longCard.list = cardList;
+      }
+    }
     let finalOutPutProps = {
       header: header,
-      bannerData: bannerData
+      bannerData: bannerData,
+      longCard: longCard
     };
 
     let allComponentGroup = `Header, SEO, appData, ${
@@ -616,7 +673,6 @@ storiesOf("templates/Zensar Template", module)
             import React from 'react'
             import { ${allComponentGroup.trim()} } from "../index"
             const SecondPage = () => {
-            document.body.style.background = '${pagebackgroundColor}'
             const extractedProps = ${JSON.stringify(finalOutPutProps)}
             return (
                 <>
@@ -644,7 +700,7 @@ storiesOf("templates/Zensar Template", module)
       : `Code Output`;
     let codeOutput = text(codeOuputLabel, defaultCode, "Code");
     changeCount++;
-    document.body.style.background = pagebackgroundColor;
+    // document.body.style.background = pagebackgroundColor;
     return (
       <>
         <Header
@@ -673,6 +729,13 @@ storiesOf("templates/Zensar Template", module)
           {card1Component === generalOptions.Yes ? (
             <>
               <TrendingCardView {...card1data} />
+            </>
+          ) : (
+            ""
+          )}
+          {longCardComponent === generalOptions.Yes ? (
+            <>
+              <LongCard {...longCard}  />
             </>
           ) : (
             ""
