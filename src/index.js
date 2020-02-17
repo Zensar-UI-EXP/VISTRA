@@ -16,6 +16,7 @@ import InfoLayout from "./components/organisms/infoLayout/infoLayout";
 import LongCard from "./components/organisms/longCard/longCard";
 import ListFooter from "./components/organisms/listFooter/listFooter";
 import appData from "./assets/app";
+import SpotLight from "./components/organisms/spotLight/spotLight";
 
 export {
   Layout,
@@ -35,5 +36,6 @@ export {
   ConnectLayout,
   QuestionLayout,
   InfoLayout,
-  ListFooter
+  ListFooter,
+  SpotLight
 };
