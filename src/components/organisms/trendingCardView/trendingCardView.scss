@@ -1,4 +1,5 @@
 .trendcard{
+    padding: 30px 0;
     &__{
         &content{
             margin: 0 auto;
@@ -19,6 +20,40 @@
                 bottom: 34px;
                 left: 0;
                 position: absolute;
+            }
+            &.border-{
+                &top--{
+                    &left{
+                        &::after{
+                            top: -15px;
+                            left: 0;
+                            bottom: auto;
+                        }
+                    }
+                    &right{
+                        &::after{
+                            top: -15px;
+                            right: 0;
+                            bottom: auto;
+                            left: auto;
+                        }
+                    }
+                }
+                &bot--{
+                    &left{
+                        &::after{
+                            left: 0;
+                            bottom: 34px;
+                        }
+                    }
+                    &right{
+                        &::after{
+                            right: 0;
+                            bottom: 34px;
+                            left: auto;
+                        }
+                    }
+                }
             }
         }
         &cardlist{
@@ -70,6 +105,72 @@
             line-height: 1.5em;
             margin: 0;
             padding: 0 30px;
+        }
+        &insightlabel, &bigdesc, &readmorelink{
+            display: none;
+        }
+    }
+    &--{
+        &secondlayout{
+            .trendcard__list{
+                padding-bottom: 0;
+                &::after{
+                    display: none
+                }
+                &:nth-child(1), &:nth-child(4), &:nth-child(5){
+                    flex-basis: 65%!important;
+                    display: flex;
+                    overflow: hidden;
+                    .trendcard__bigdesc{
+                        display: block;
+                    }
+                    .trendcard__imgcont{
+                        flex-basis: 50%;
+                        overflow: hidden;
+                    }
+                    .trendcard__infomsg{
+                        flex-basis: 50%;
+                        overflow: hidden;
+                    }
+                }
+            }
+            .trendcard__imgcont{
+                width: 50%;
+                margin-bottom: 0;
+            }
+            .trendcard__label{
+                display: none;
+            }
+            .trendcard__infomsg{
+                padding: 20px;
+            }
+            .trendcard__insightlabel{
+                padding: 10px;
+                color: $text--white;
+                font-size: 16px;
+                font-family: $font--latoLight;
+                margin: 0;
+                display: block;
+                background: rgb(38, 17, 56);
+                display: inline-block;
+            }
+            .trendcard__desc, .trendcard__date{
+                padding: 0;
+                margin-top: 20px;
+            }
+            .trendcard__readmorelink{
+                display: block;
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                text-decoration: none;
+            }
+            .trendcard__bigdesc{
+                color: #2d2e30;
+                font-size: 14px;
+                font-family: $font--latoLight;
+                margin: 10px 0 0;
+            }
         }
     }
 }

@@ -20,6 +20,9 @@ import Image from "../../src/components/atoms/source/source";
 import FullWidthImage from "../../src/components/molecules/fullWidthImage";
 import Exploreproduct from "../../src/components/molecules/exploreproduct/exploreproduct";
 import Footer from "../../src/components/organisms/footer/footer";
+import InfoLayout from "../../src/components/organisms/infoLayout/infoLayout";
+import TrendingCardView from "../../src/components/organisms/trendingCardView/trendingCardView";
+import ConnectLayout from "../../src/components/organisms/connectLayout/connectLayout";
 import appData from "../../src/assets/app";
 import SEO from "../../src/components/organisms/seo";
 
@@ -365,7 +368,241 @@ storiesOf("templates/Zensar Template", module)
         }
       }
     }
+    const infoLayoutGroupName = "Information Component";
+    const infoLayoutComponentLabel = "Do you want the information message component?";
+    let infoLayoutComponent = options(
+      infoLayoutComponentLabel,
+      generalOptions,
+      generalOptions.No,
+      inlineRadioOptionObj,
+      infoLayoutGroupName
+    );
+    let infoLayoutData = {};
+    if (infoLayoutComponent === generalOptions.Yes) {
+      let backgroundColor = htmlDecode(
+        text("Background Color", appData.infoLayout.overallCustomStyle.background, infoLayoutGroupName)
+      );
+      let contentWidth = htmlDecode(
+        number("Width of the container", appData.infoLayout.contentCustomStyle.width, {
+            range: true,
+            min: 0,
+            max: 100,
+            step: 5
+          }, 
+          infoLayoutGroupName)
+      );
+      infoLayoutData.overallCustomStyle = {background: backgroundColor};
+      infoLayoutData.contentCustomStyle = {width: contentWidth + "%"};
+      infoLayoutData.desc = htmlDecode(
+        text("Type message desplay in the layout", appData.infoLayout.desc, infoLayoutGroupName)
+      );
+    }
 
+    const card1GroupName = "Card Component1";
+    const card1ComponentLabel = "Do you want the card component layout1?";
+    let card1Component = options(
+      card1ComponentLabel,
+      generalOptions,
+      generalOptions.Yes,
+      inlineRadioOptionObj,
+      card1GroupName
+    );
+    let card1data = {};
+    if (card1Component === generalOptions.Yes) {
+      let backgroundColor = htmlDecode(
+        text("Background Color", appData.trendcard.overallCustomStyle.background, card1GroupName)
+      );
+      let contentWidth = htmlDecode(
+        number("Width of the container", 90, {
+            range: true,
+            min: 0,
+            max: 100,
+            step: 5
+          }, 
+          card1GroupName)
+      );
+      card1data.overallCustomStyle = {background: backgroundColor};
+      card1data.contentCustomStyle = {width: contentWidth + "%"};
+      card1data.heading = htmlDecode(
+        text("Card Heading", appData.trendcard.heading, card1GroupName)
+      );
+      let headingFontColor = htmlDecode(
+        text("Heading Font Color", appData.trendcard.headingCustomStyle.color, card1GroupName)
+      );
+      card1data.headingCustomStyle = {color: headingFontColor};
+      let headingBorderAlignOptions = ["Top Left", "Top Right", "Bottom Left", "Bottom Right"];
+      let boderClassList = ["border-top--left", "border-top--right", "border-bot--left", "border-bot--right"]
+      let headingBorderAlign = select(
+        "Heading border alignment",
+        headingBorderAlignOptions,
+        headingBorderAlignOptions[2],
+        card1GroupName
+      );
+      card1data.headingBorderAlign = boderClassList[headingBorderAlignOptions.indexOf(headingBorderAlign)];
+
+      let innerWidth = htmlDecode(
+        number("Width of the inner container", 90, {
+            range: true,
+            min: 0,
+            max: 100,
+            step: 5
+          }, 
+          card1GroupName)
+      );
+      card1data.cardListCustomStyle = {width: innerWidth + "%"};
+      const cardLayoutOptions = {
+        layout1: "Layout 1",
+        layout2: "Layout 2"
+      };
+      let selectCardLayout = options(
+        "Select the card layout",
+        cardLayoutOptions,
+        cardLayoutOptions.layout1,
+        inlineRadioOptionObj,
+        card1GroupName
+      );
+      card1data.customClass = selectCardLayout === cardLayoutOptions.layout2 ? "trendcard--secondlayout" : "";
+      let cardBackgroundColor = htmlDecode(
+        text("Card Background Color", appData.trendcard.cardCustomStyle.background, card1GroupName)
+      );
+      card1data.cardCustomStyle = {background: cardBackgroundColor};
+      let cardFontColor = htmlDecode(
+        text("Card Font Color", appData.trendcard.cardCustomStyle.color, card1GroupName)
+      );
+      card1data.cardCustomStyle = {background: cardBackgroundColor, color: cardFontColor};
+      let cardListLabelbg = htmlDecode(
+        text("Card List Label BG", appData.trendcard.cardListLabelCustomStyle.background, card1GroupName)
+      );
+      card1data.cardListLabelCustomStyle = {background: cardListLabelbg};
+      let cardListDateColor = htmlDecode(
+        text("Card List Date Font color", appData.trendcard.cardDateCustomStyle.color, card1GroupName)
+      );
+      card1data.cardDateCustomStyle = {color: cardListDateColor};
+      let cardListDetailDescColor = htmlDecode(
+        text("Card List Detail Description Font color", appData.trendcard.cardDetailDescCustomStyle.color, card1GroupName)
+      );
+      card1data.cardDetailDescCustomStyle = {color: cardListDetailDescColor};
+      let cardListLinkColor = htmlDecode(
+        text("Card List Link Font color", appData.trendcard.cardLinkCustomStyle.color, card1GroupName)
+      );
+      card1data.cardLinkCustomStyle = {color: cardListLinkColor};
+
+      let totalNoOfCards = htmlDecode(
+        number(" Total number Of cards", 6, {
+            range: false,
+            min: 2,
+            max: 6,
+            step: 1
+          }, 
+          card1GroupName)
+      );
+      card1data.cardlist = [];
+      for (let indexNumber = 0; indexNumber < totalNoOfCards; indexNumber++){
+        card1data.cardlist[indexNumber] = {};
+        let cardnumber = indexNumber+1;
+        card1data.cardlist[indexNumber].image = htmlDecode(
+          text(`Card${cardnumber} image`, appData.trendcard.cardlist[indexNumber].image, card1GroupName)
+        );
+        card1data.cardlist[indexNumber].cardDescription = htmlDecode(
+          text(`Card${cardnumber} Description`, appData.trendcard.cardlist[indexNumber].cardDescription, card1GroupName)
+        );
+        card1data.cardlist[indexNumber].cardDate = htmlDecode(
+          text(`Card${cardnumber} Date`, appData.trendcard.cardlist[indexNumber].cardDate || `Card${cardnumber} Date`, card1GroupName)
+        );
+        card1data.cardlist[indexNumber].cardLabel = htmlDecode(
+          text(`Card${cardnumber} Label`, appData.trendcard.cardlist[indexNumber].cardLabel || `Card${cardnumber} Date`, card1GroupName)
+        );
+        if (indexNumber == 0 || indexNumber == 3 || indexNumber == 4) {
+          card1data.cardlist[indexNumber].cardDetailDescription = htmlDecode(
+            text(`Card${cardnumber} Detail Description`, appData.trendcard.cardlist[indexNumber].cardDetailDescription, card1GroupName)
+          );
+        }
+        card1data.cardlist[indexNumber].link = htmlDecode(
+          text(`Card${cardnumber} Link`, appData.trendcard.cardlist[indexNumber].link, card1GroupName)
+        );
+        
+      }
+    }
+
+    const connectLayoutGroupName = "Connect Layout Component";
+    const connectLayoutComponentLabel = "Do you want the Connect Layout component?";
+    let connectLayoutComponent = options(
+      connectLayoutComponentLabel,
+      generalOptions,
+      generalOptions.Yes,
+      inlineRadioOptionObj,
+      connectLayoutGroupName
+    );
+    let connectLayoutdata = {};
+    if (connectLayoutComponent === generalOptions.Yes) {
+      let backgroundColor = htmlDecode(
+        text("Connect Layout Background", appData.connectlayout.overallCustomStyle.background, connectLayoutGroupName)
+      );
+      connectLayoutdata.overallCustomStyle = {background: backgroundColor};
+      let contentWidth = htmlDecode(
+        number("onnect Layout Width", 90, {
+            range: true,
+            min: 0,
+            max: 100,
+            step: 5
+          }, 
+          connectLayoutGroupName)
+      );
+      connectLayoutdata.contentCustomStyle = {width: contentWidth + "%"};
+      connectLayoutdata.heading = htmlDecode(
+        text("Heading", appData.connectlayout.heading, connectLayoutGroupName)
+      );
+      let headingFontSize = htmlDecode(
+        number("Heading Font Size", 54, {
+            range: true,
+            min: 14,
+            max: 100,
+            step: 2
+          }, 
+          connectLayoutGroupName)
+      );
+      connectLayoutdata.headingCustomStyle = { "font-size": headingFontSize + "px"};
+      connectLayoutdata.description = htmlDecode(
+        text("Description", appData.connectlayout.description, connectLayoutGroupName)
+      );
+      let descriptionFontSize = htmlDecode(
+        number("Description Font Size", 24, {
+            range: true,
+            min: 14,
+            max: 100,
+            step: 2
+          }, 
+          connectLayoutGroupName)
+      );
+      connectLayoutdata.descriptionCustomStyle = { "font-size": descriptionFontSize + "px"};
+      connectLayoutdata.buttonLabel = htmlDecode(
+        text("Button Label", appData.connectlayout.buttonLabel, connectLayoutGroupName)
+      );
+      let buttonBg = htmlDecode(
+        text("Button Background", appData.connectlayout.overallCustomStyle.background, connectLayoutGroupName)
+      );
+      connectLayoutdata.buttonCustomStyle = {background: buttonBg};
+      const imageVideoLabel = "Do you want image (or) video?";
+      const imageVideoOptions = ["Image", "Video"]
+      connectLayoutdata.imageVideo = options(
+        imageVideoLabel,
+        imageVideoOptions,
+        imageVideoOptions[0],
+        inlineRadioOptionObj,
+        connectLayoutGroupName
+      );
+      if (connectLayoutdata.imageVideo === imageVideoOptions[0]){
+        connectLayoutdata.image = htmlDecode(
+          text("image", appData.connectlayout.image, connectLayoutGroupName)
+        );
+      } else {
+        connectLayoutdata.videoSrc = htmlDecode(
+          text("video", appData.connectlayout.videoSrc, connectLayoutGroupName)
+        );
+      }
+      connectLayoutdata.btnClassName = "btn--transparent";
+    }
+    
     let finalOutPutProps = {
       header: header,
       bannerData: bannerData
@@ -422,6 +659,27 @@ storiesOf("templates/Zensar Template", module)
                 data={bannerData.data}
                 maxWidth={bannerData.maxWidth}
               />
+            </>
+          ) : (
+            ""
+          )}
+          {infoLayoutComponent === generalOptions.Yes ? (
+            <>
+              <InfoLayout {...infoLayoutData} />
+            </>
+          ) : (
+            ""
+          )}
+          {card1Component === generalOptions.Yes ? (
+            <>
+              <TrendingCardView {...card1data} />
+            </>
+          ) : (
+            ""
+          )}
+          {connectLayoutComponent === generalOptions.Yes ? (
+            <>
+              <ConnectLayout {...connectLayoutdata} />
             </>
           ) : (
             ""
