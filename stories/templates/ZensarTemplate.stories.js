@@ -36,7 +36,7 @@ storiesOf("templates/Zensar Template", module)
   .addDecorator(withA11y)
   .addDecorator(withKnobs)
   .add("default", () => {
-    const headerGroupName = "Header Component";
+    const headerGroupName = "Header";
     let header = {
       headerStyle: {}
     };
@@ -262,7 +262,7 @@ storiesOf("templates/Zensar Template", module)
       header.liteFontColor = liteFontColor;
     }
 
-    const carouselGroupName = "Banner Carousel Component";
+    const carouselGroupName = "Banner Slider";
     const carouselComponentLabel = "Do you want the banner carousel component?";
     const generalOptions = {
       Yes: "yes",
@@ -411,7 +411,7 @@ storiesOf("templates/Zensar Template", module)
         }
       }
     }
-    const infoLayoutGroupName = "Information Component";
+    const infoLayoutGroupName = "Information";
     const infoLayoutComponentLabel = "Do you want the information message component?";
     let infoLayoutComponent = options(
       infoLayoutComponentLabel,
@@ -441,7 +441,7 @@ storiesOf("templates/Zensar Template", module)
       );
     }
 
-    const card1GroupName = "Card Component1";
+    const card1GroupName = "Card";
     const card1ComponentLabel = "Do you want the card component layout1?";
     let card1Component = options(
       card1ComponentLabel,
@@ -567,7 +567,7 @@ storiesOf("templates/Zensar Template", module)
       }
     }
 
-    const connectLayoutGroupName = "Connect Layout Component";
+    const connectLayoutGroupName = "Connect";
     const connectLayoutComponentLabel = "Do you want the Connect Layout component?";
     let connectLayoutComponent = options(
       connectLayoutComponentLabel,
@@ -647,7 +647,7 @@ storiesOf("templates/Zensar Template", module)
     }
 
 
-    const longCardGroupName = "Two Card Component";
+    const longCardGroupName = "Two Card";
     const  longCardComponentLabel = "Do you want the two card component?";
     let longCardComponent = options(
       longCardComponentLabel,
@@ -702,64 +702,7 @@ storiesOf("templates/Zensar Template", module)
       }
     }
 
-    const ListFooterGroupName = "List Footer Component";
-    const sectionListLabel = "Number of List Footer"
-    const sectionListDefault = 4
-    const sectionListOption = {
-      range: false,
-      min: 1,
-      max: 5,
-      step: 1,
-    }
-    const sectionListOutput = number(sectionListLabel, sectionListDefault, sectionListOption, ListFooterGroupName)
-    const sectionList = []
-    for (var j = 0; j < sectionListOutput; j++) {
-      sectionList.push({ heading: (appData.listFooter.sectionList[j] ? appData.listFooter.sectionList[j].heading : `Header ${ j + 1}`), linklist: [] })
-      sectionList[j].heading = text(
-            `Header ${ j + 1}`,
-            `${ sectionList[j].heading}`,
-            ListFooterGroupName
-          )
-      const menuListDefault = 3
-      const menuListNumberOption = {
-        range: false,
-        min: 3,
-        max: 10,
-        step: 1,
-      }
-      let menuListOutput = number(
-        `Header ${ j + 1} - Number of List`,
-        menuListDefault,
-        menuListNumberOption,
-        ListFooterGroupName
-      )
-      for (let i = 0; i < menuListOutput; i++) {
-        sectionList[j].linklist.push(appData.listFooter.sectionList[j] ? appData.listFooter.sectionList[j].linklist[i]: `Header ${ j + 1} - List  ${ i + 1} `)
-        sectionList[j].linklist[i] = text(
-          `Header ${ j + 1} - List  ${ i + 1} `,
-          `${sectionList[j].linklist[i]}`,
-          ListFooterGroupName
-        )
-      }
-    }
-
-    var listFooterBackground = text(
-      `list Footer Background`,
-      `${appData.listFooter.overallCustomStyle.background}`,
-      ListFooterGroupName
-    )
-    var listFootercontentCustomStyle = text(
-      `list Footer content width`,
-      `${appData.listFooter.contentCustomStyle.width}`,
-      ListFooterGroupName
-    )
-    var listFooter =  {
-      overallCustomStyle: { background:  listFooterBackground },
-      contentCustomStyle: { width: listFootercontentCustomStyle },
-      sectionList:sectionList
-    }
-
-    const questionLayoutGroupName = "Question Layout Component";
+    const questionLayoutGroupName = "Question Layout";
     const  questionLayoutComponentLabel = "Do you want the question layout component?";
     let questionLayoutComponent = options(
       questionLayoutComponentLabel,
@@ -824,7 +767,63 @@ storiesOf("templates/Zensar Template", module)
       `${appData.questionLayout.contentCustomStyle.width}`,
       questionLayoutGroupName
     )
-    
+
+    const ListFooterGroupName = "List Footer";
+    const sectionListLabel = "Number of List Footer"
+    const sectionListDefault = 4
+    const sectionListOption = {
+      range: false,
+      min: 1,
+      max: 5,
+      step: 1,
+    }
+    const sectionListOutput = number(sectionListLabel, sectionListDefault, sectionListOption, ListFooterGroupName)
+    const sectionList = []
+    for (var j = 0; j < sectionListOutput; j++) {
+      sectionList.push({ heading: (appData.listFooter.sectionList[j] ? appData.listFooter.sectionList[j].heading : `Header ${ j + 1}`), linklist: [] })
+      sectionList[j].heading = text(
+            `Header ${ j + 1}`,
+            `${ sectionList[j].heading}`,
+            ListFooterGroupName
+          )
+      const menuListDefault = 3
+      const menuListNumberOption = {
+        range: false,
+        min: 3,
+        max: 10,
+        step: 1,
+      }
+      let menuListOutput = number(
+        `Header ${ j + 1} - Number of List`,
+        menuListDefault,
+        menuListNumberOption,
+        ListFooterGroupName
+      )
+      for (let i = 0; i < menuListOutput; i++) {
+        sectionList[j].linklist.push(appData.listFooter.sectionList[j] ? appData.listFooter.sectionList[j].linklist[i]: `Header ${ j + 1} - List  ${ i + 1} `)
+        sectionList[j].linklist[i] = text(
+          `Header ${ j + 1} - List  ${ i + 1} `,
+          `${sectionList[j].linklist[i]}`,
+          ListFooterGroupName
+        )
+      }
+    }
+
+    var listFooterBackground = text(
+      `list Footer Background`,
+      `${appData.listFooter.overallCustomStyle.background}`,
+      ListFooterGroupName
+    )
+    var listFootercontentCustomStyle = text(
+      `list Footer content width`,
+      `${appData.listFooter.contentCustomStyle.width}`,
+      ListFooterGroupName
+    )
+    var listFooter =  {
+      overallCustomStyle: { background:  listFooterBackground },
+      contentCustomStyle: { width: listFootercontentCustomStyle },
+      sectionList:sectionList
+    }
 
     let finalOutPutProps = {
       header: header,

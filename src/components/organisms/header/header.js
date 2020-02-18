@@ -11,15 +11,18 @@ const Header = props => {
   const [searchActive, setSearchActive] = useState("");
   useEffect(() => {
     document.addEventListener("scroll", () => {
-      // checkScrollState()
+      checkScrollState()
     });
-    // checkScrollState()
+    checkScrollState()
   });
   const checkScrollState = () => {
-    if (window.pageYOffset == 0) {
-      document.body.classList.add("highnav");
-    } else {
-      document.body.classList.remove("highnav");
+    // if (window.pageYOffset == 0) {
+    //   document.body.classList.add("highnav");
+    // } else {
+    //   document.body.classList.remove("highnav");
+    // }
+    if (document.querySelector(".slick-slider")) {
+      document.body.classList.remove("no-scroll");
     }
   };
 
