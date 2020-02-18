@@ -27,6 +27,8 @@ import LongCard from "../../src/components/organisms/longCard/longCard"
 import appData from "../../src/assets/app";
 import ListFooter from "../../src/components/organisms/listFooter/listFooter";
 import SpotLight from "../../src/components/organisms/spotLight/spotLight";
+import QuestionLayout from "../../src/components/organisms/questionLayout/questionLayout"
+
 import SEO from "../../src/components/organisms/seo";
 
 let changeCount = 0;
@@ -760,6 +762,73 @@ storiesOf("templates/Zensar Template", module)
       sectionList:sectionList
     }
 
+    const questionLayoutGroupName = "Question Layout Component";
+    const  questionLayoutComponentLabel = "Do you want the question layout component?";
+    let questionLayoutComponent = options(
+      questionLayoutComponentLabel,
+      generalOptions,
+      generalOptions.No,
+      inlineRadioOptionObj,
+      questionLayoutGroupName
+    );
+    var questionLayout = {
+      leftcontent: {},
+      rightcontent: {},
+      overallCustomStyle: {},
+      contentCustomStyle: {}
+    }
+    questionLayout.leftcontent.heading = text(
+      `Left Header`,
+      appData.questionLayout.leftcontent.heading,
+      questionLayoutGroupName
+    );
+    questionLayout.leftcontent.description = text(
+      `Left Description`,
+      appData.questionLayout.leftcontent.description,
+      questionLayoutGroupName
+    );
+    questionLayout.leftcontent.buttonLabel = text(
+      `Left Button Label`,
+      appData.questionLayout.leftcontent.buttonLabel,
+      questionLayoutGroupName
+    );
+    questionLayout.leftcontent.callLink = text(
+      `Left Call Link`,
+      appData.questionLayout.leftcontent.callLink,
+      questionLayoutGroupName
+    );
+    questionLayout.rightcontent.heading = text(
+      `Right Header`,
+      appData.questionLayout.rightcontent.heading,
+      questionLayoutGroupName
+    );
+    questionLayout.rightcontent.description = text(
+      `Right Description`,
+      appData.questionLayout.rightcontent.description,
+      questionLayoutGroupName
+    );
+    questionLayout.rightcontent.buttonLabel = text(
+      `Right Button Label`,
+      appData.questionLayout.rightcontent.buttonLabel,
+      questionLayoutGroupName
+    );
+    questionLayout.rightcontent.callLink = text(
+      `Right Call Link`,
+      appData.questionLayout.rightcontent.callLink,
+      questionLayoutGroupName
+    );
+    questionLayout.overallCustomStyle.background = text(
+      `list Footer Background`,
+      `${appData.questionLayout.overallCustomStyle.background}`,
+      questionLayoutGroupName
+    )
+    questionLayout.contentCustomStyle.width  = text(
+      `list Footer content width`,
+      `${appData.questionLayout.contentCustomStyle.width}`,
+      questionLayoutGroupName
+    )
+    
+
     let finalOutPutProps = {
       header: header,
       bannerData: bannerData,
@@ -852,6 +921,13 @@ storiesOf("templates/Zensar Template", module)
           {connectLayoutComponent === generalOptions.Yes ? (
             <>
               <ConnectLayout {...connectLayoutdata} />
+            </>
+          ) : (
+            ""
+          )}
+          {questionLayoutComponent === generalOptions.Yes ? (
+            <>
+              <QuestionLayout {...questionLayout} />
             </>
           ) : (
             ""
