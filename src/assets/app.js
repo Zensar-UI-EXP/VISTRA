@@ -355,12 +355,12 @@ const App = {
   },
   banner: {
     data: [
-      { image: bannerCarouselImage1 },
-      { image: bannerCarouselImage2 },
-      { image: bannerCarouselImage3 },
-      { image: bannerCarouselImage4 },
-      { image: bannerCarouselImage5 },
-      { image: bannerCarouselImage6 }
+      { image: 'https://www.zensar.com/sites/all/themes/new_zensar/img/Banner_Imag_962678392_W.jpg' },
+      { image: 'https://www.zensar.com/sites/all/themes/new_zensar/img/medical-w.jpg' },
+      { image: 'https://www.zensar.com/sites/all/themes/new_zensar/img/Store%20of%20the%20Future%20%E2%80%93%20Point%20of%20View_w.jpg' },
+      { image: 'https://www.zensar.com/sites/all/themes/new_zensar/img/16_d.jpg' },
+      { image: 'https://www.zensar.com/sites/all/themes/new_zensar/img/iStock-918639620_w.jpg' },
+      { image: 'https://www.zensar.com/sites/all/themes/new_zensar/img/Transitioning-your-Insurance-business-to-the-Cloud_w.jpg' }
     ]
   },
   overlayCard: {

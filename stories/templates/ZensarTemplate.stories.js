@@ -25,7 +25,8 @@ import TrendingCardView from "../../src/components/organisms/trendingCardView/tr
 import ConnectLayout from "../../src/components/organisms/connectLayout/connectLayout";
 import LongCard from "../../src/components/organisms/longCard/longCard"
 import appData from "../../src/assets/app";
-import ListFooter from "../../src/components/organisms/listFooter/listFooter"
+import ListFooter from "../../src/components/organisms/listFooter/listFooter";
+import SpotLight from "../../src/components/organisms/spotLight/spotLight";
 import SEO from "../../src/components/organisms/seo";
 
 let changeCount = 0;
@@ -279,7 +280,19 @@ storiesOf("templates/Zensar Template", module)
       carouselGroupName
     );
     let bannerData = { data: [] };
+    let bannerChoiceOptions = {
+      option1: "Carousal Slider",
+      option2: "Spotlight Slider"
+    }
     if (carouselComponent === generalOptions.Yes) {
+      let bannerChoiceLabel = "Choose the banner slider behaviours";
+      bannerData.bannerChoice = options(
+        bannerChoiceLabel,
+        bannerChoiceOptions,
+        bannerChoiceOptions.option1,
+        inlineRadioOptionObj,
+        carouselGroupName
+      );
       const bannerListNumberOption = {
         range: false,
         min: 2,
@@ -287,7 +300,7 @@ storiesOf("templates/Zensar Template", module)
         step: 1
       };
       const bannerListLabel = "Number of Banner";
-      const bannerListDefault = 7;
+      const bannerListDefault = 6;
       let bannerListOutput = number(
         bannerListLabel,
         bannerListDefault,
@@ -318,7 +331,7 @@ storiesOf("templates/Zensar Template", module)
         bannerData.data[i] = {
           image: text(
             `Image ${i + 1}`,
-            "https://upbeat-hawking-79b2b3.netlify.com/static/banner__carousal__2-e636edb6b6dd93c02b6cbda3e806affa.jpg",
+            appData.banner.data[i].image,
             carouselGroupName
           )
         };
@@ -769,12 +782,19 @@ storiesOf("templates/Zensar Template", module)
           logoImage={header.bgImage}
         />
         <div className="home">
-          {carouselComponent === generalOptions.Yes ? (
+          {carouselComponent === generalOptions.Yes && bannerData.bannerChoice === bannerChoiceOptions.option1 ? (
             <>
               <BannerCarousel
                 data={bannerData.data}
                 maxWidth={bannerData.maxWidth}
               />
+            </>
+          ) : (
+            ""
+          )}
+          {carouselComponent === generalOptions.Yes && bannerData.bannerChoice === bannerChoiceOptions.option2 ? (
+            <>
+              <SpotLight data={bannerData.data} />
             </>
           ) : (
             ""

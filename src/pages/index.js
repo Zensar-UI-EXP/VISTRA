@@ -33,7 +33,7 @@ const IndexPage = () => {
       <Header siteTitle={data.site.siteMetadata.title} {...appData.header} />
       <div className="home">
         <BannerCarousel {...appData.banner} />
-        <SpotLight />
+        <SpotLight {...appData.banner} />
         <InfoLayout {...appData.infoLayout} />
         <TrendingCardView {...appData.trendcard} />
         <LongCard {...appData.longCard} />
