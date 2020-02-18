@@ -70,7 +70,7 @@ const SpotLight = props => {
                           data-delay-out="200"
                           className="spotlight__heading mt-0"
                         >
-                          Wherever opportunity is, so are we
+                          {item.header}
                         </h2>
                         <p
                           data-animation="fade"
@@ -79,22 +79,17 @@ const SpotLight = props => {
                           data-delay-out="150"
                           className="spotlight__subheading"
                         >
-                          In a globalising world, there are opportunities out there.
+                        {item.subHeader}
                         </p>
                         <p
                           data-animation="fade"
                           data-delay="750"
                           data-animation-out="fade"
                           data-delay-out="150"
+
+                          dangerouslySetInnerHTML={{__html: item.description}} 
                         >
-                          Opportunities to grow. To innovate. To expand into new
-                          markets, and new countries.
-                          <br />
-                          As one of the world’s leading corporate service providers,
-                          we work with clients of all sizes and types, including
-                          corporations, family businesses, investment funds, private
-                          equity firms and private clients to expand and support
-                          them around the world.
+                          
                         </p>
                         <a
                           data-animation="fade"
@@ -105,7 +100,7 @@ const SpotLight = props => {
                           href="/about-us"
                           className="btn"
                         >
-                          MORE ABOUT VISTRA
+                         {item.buttonText}
                         </a>
                       </div>
                       <div

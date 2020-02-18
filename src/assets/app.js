@@ -355,12 +355,71 @@ const App = {
   },
   banner: {
     data: [
-      { image: 'https://www.zensar.com/sites/all/themes/new_zensar/img/Banner_Imag_962678392_W.jpg' },
-      { image: 'https://www.zensar.com/sites/all/themes/new_zensar/img/medical-w.jpg' },
-      { image: 'https://www.zensar.com/sites/all/themes/new_zensar/img/Store%20of%20the%20Future%20%E2%80%93%20Point%20of%20View_w.jpg' },
-      { image: 'https://www.zensar.com/sites/all/themes/new_zensar/img/16_d.jpg' },
-      { image: 'https://www.zensar.com/sites/all/themes/new_zensar/img/iStock-918639620_w.jpg' },
-      { image: 'https://www.zensar.com/sites/all/themes/new_zensar/img/Transitioning-your-Insurance-business-to-the-Cloud_w.jpg' }
+      { image: 'https://www.zensar.com/sites/all/themes/new_zensar/img/Banner_Imag_962678392_W.jpg', 
+      header:`Wherever opportunity is, so are we`, 
+      subHeader: `In a globalising world, there are opportunities out there.`, description: `Opportunities to grow. To innovate. To expand into new
+      markets, and new countries.
+      <br />
+      As one of the world’s leading corporate service providers,
+      we work with clients of all sizes and types, including
+      corporations, family businesses, investment funds, private
+      equity firms and private clients to expand and support
+      them around the world.`,
+      buttonText: `MORE ABOUT VISTRA` },
+      { image: 'https://www.zensar.com/sites/all/themes/new_zensar/img/medical-w.jpg',
+      header:`Wherever opportunity is, so are we`, 
+      subHeader: `In a globalising world, there are opportunities out there.`, description: `Opportunities to grow. To innovate. To expand into new
+      markets, and new countries.
+      <br />
+      As one of the world’s leading corporate service providers,
+      we work with clients of all sizes and types, including
+      corporations, family businesses, investment funds, private
+      equity firms and private clients to expand and support
+      them around the world.`,
+      buttonText: `MORE ABOUT VISTRA`  },
+      { image: 'https://www.zensar.com/sites/all/themes/new_zensar/img/Store%20of%20the%20Future%20%E2%80%93%20Point%20of%20View_w.jpg',
+      header:`Wherever opportunity is, so are we`, 
+      subHeader: `In a globalising world, there are opportunities out there.`, description: `Opportunities to grow. To innovate. To expand into new
+      markets, and new countries.
+      <br />
+      As one of the world’s leading corporate service providers,
+      we work with clients of all sizes and types, including
+      corporations, family businesses, investment funds, private
+      equity firms and private clients to expand and support
+      them around the world.`, 
+      buttonText: `MORE ABOUT VISTRA`  },
+      { image: 'https://www.zensar.com/sites/all/themes/new_zensar/img/16_d.jpg',
+      header:`Wherever opportunity is, so are we`, 
+      subHeader: `In a globalising world, there are opportunities out there.`, description: `Opportunities to grow. To innovate. To expand into new
+      markets, and new countries.
+      <br />
+      As one of the world’s leading corporate service providers,
+      we work with clients of all sizes and types, including
+      corporations, family businesses, investment funds, private
+      equity firms and private clients to expand and support
+      them around the world.`, 
+      buttonText: `MORE ABOUT VISTRA` },
+      { image: 'https://www.zensar.com/sites/all/themes/new_zensar/img/iStock-918639620_w.jpg',header:`Wherever opportunity is, so are we`, 
+      subHeader: `In a globalising world, there are opportunities out there.`, description: `Opportunities to grow. To innovate. To expand into new
+      markets, and new countries.
+      <br />
+      As one of the world’s leading corporate service providers,
+      we work with clients of all sizes and types, including
+      corporations, family businesses, investment funds, private
+      equity firms and private clients to expand and support
+      them around the world.`, 
+      buttonText: `MORE ABOUT VISTRA`  },
+      { image: 'https://www.zensar.com/sites/all/themes/new_zensar/img/Transitioning-your-Insurance-business-to-the-Cloud_w.jpg',
+      header:`Wherever opportunity is, so are we`, 
+      subHeader: `In a globalising world, there are opportunities out there.`, description: `Opportunities to grow. To innovate. To expand into new
+      markets, and new countries.
+      <br />
+      As one of the world’s leading corporate service providers,
+      we work with clients of all sizes and types, including
+      corporations, family businesses, investment funds, private
+      equity firms and private clients to expand and support
+      them around the world.`,
+       buttonText: `MORE ABOUT VISTRA`  }
     ]
   },
   overlayCard: {

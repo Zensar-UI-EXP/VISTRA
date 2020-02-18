@@ -342,16 +342,35 @@ storiesOf("templates/Zensar Template", module)
           carouselGroupName
         );
         if (bannerData.data[i].isText == "yes") {
-          bannerData.data[i].heroText = text(
-            `Hero Text ${i + 1}`,
-            `Hero Text ${i + 1}`,
-            carouselGroupName
-          );
-          bannerData.data[i].subText = text(
-            `Sub Text ${i + 1}`,
-            `Sub Text ${i + 1}`,
-            carouselGroupName
-          );
+          if(bannerData.bannerChoice == "Spotlight Slider") {
+            bannerData.data[i].header = text(
+              `Header ${i + 1}`,
+              `${appData.banner.data[i]? appData.banner.data[i].header : `Header Text ${i + 1}`}`,
+              carouselGroupName
+            );
+            bannerData.data[i].subHeader = text(
+              `Sub Header ${i + 1}`,
+              `${appData.banner.data[i]? appData.banner.data[i].subHeader : `Sub Header Text ${i + 1}`}`,
+              carouselGroupName
+            );
+            bannerData.data[i].description = text(
+              `Description ${i + 1}`,
+              `${appData.banner.data[i]? appData.banner.data[i].description : `Description Text ${i + 1}`}`,
+              carouselGroupName
+            );
+          } else {
+            bannerData.data[i].heroText = text(
+              `Hero Text ${i + 1}`,
+              `Hero Text ${i + 1}`,
+              carouselGroupName
+            );
+            bannerData.data[i].subText = text(
+              `Sub Text ${i + 1}`,
+              `Sub Text ${i + 1}`,
+              carouselGroupName
+            );
+          }
+          
           bannerData.data[i].textAlign = select(
             `Text align ${i + 1}`,
             [
@@ -369,16 +388,26 @@ storiesOf("templates/Zensar Template", module)
           );
 
           if (bannerData.data[i].isButton == "yes") {
-            bannerData.data[i].btnLabel = text(
-              `Label ${i + 1}`,
-              "Default Button",
-              carouselGroupName
-            );
-            bannerData.data[i].btnClassName = select(
-              `Button ${i + 1}`,
-              ["btn", "btn--transparent", "btn--blue"],
-              "btn"
-            );
+
+            if(bannerData.bannerChoice == "Spotlight Slider") {
+              bannerData.data[i].buttonText = text(
+                `Label ${i + 1}`,
+                "Default Button",
+                carouselGroupName
+              );
+            } else {
+              bannerData.data[i].btnLabel = text(
+                `Label ${i + 1}`,
+                "Default Button",
+                carouselGroupName
+              );
+              bannerData.data[i].btnClassName = select(
+                `Button ${i + 1}`,
+                ["btn", "btn--transparent", "btn--blue"],
+                "btn"
+              );
+            }
+            
           }
         }
       }
