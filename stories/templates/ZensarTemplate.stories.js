@@ -231,10 +231,7 @@ storiesOf("templates/Zensar Template", module)
         headerGroupName
       );
       for (let i = 0; i < menuLiteOutput; i++) {
-        let newObj = createObject(
-          appData.header.liteNav[i]
-            ? appData.header.liteNav[i].label
-            : `Top Lite Menu ${i + 1}`,
+        let newObj = createObject(`Top Lite Menu ${i + 1}`,
           `Top Lite Menu ${i + 1}`,
           `/`,
           appData.header.liteNav[i]
