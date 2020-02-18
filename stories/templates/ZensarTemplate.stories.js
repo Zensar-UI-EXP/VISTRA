@@ -280,15 +280,15 @@ storiesOf("templates/Zensar Template", module)
     );
     let bannerData = { data: [] };
     let bannerChoiceOptions = {
-      option1: "Carousal Slider",
-      option2: "Spotlight Slider"
+      HorizontalSlider: "Horizontal Slider",
+      VerticalSlider: "Vertical Slider"
     }
     if (carouselComponent === generalOptions.Yes) {
       let bannerChoiceLabel = "Choose the banner slider behaviours";
       bannerData.bannerChoice = options(
         bannerChoiceLabel,
         bannerChoiceOptions,
-        bannerChoiceOptions.option1,
+        bannerChoiceOptions.HorizontalSlider,
         inlineRadioOptionObj,
         carouselGroupName
       );
@@ -567,6 +567,63 @@ storiesOf("templates/Zensar Template", module)
       }
     }
 
+    const longCardGroupName = "Two Card";
+    const  longCardComponentLabel = "Do you want the two card component?";
+    let longCardComponent = options(
+      longCardComponentLabel,
+      generalOptions,
+      generalOptions.No,
+      inlineRadioOptionObj,
+      longCardGroupName
+    );
+    let createLongObject = (header, description, link, imageUrl, image) => {
+      return {
+        header,
+        description,
+        link,
+        imageUrl,
+        image
+      };
+    };
+  
+    const longCard = {
+      list: []
+    }
+    const cardList = []
+    if (longCardComponent === generalOptions.Yes) {
+      let cardBackground = text(`Card Background`,appData.longCard.list[0].background, longCardGroupName);
+      let cardBorder = text(`Card Border`,appData.longCard.list[0].background, longCardGroupName);
+      for (var i = 0; i < 2; i++) {
+          let newObj = createLongObject(
+            appData.longCard.list[i] ? appData.longCard.list[i].header : `Header ${i + 1}`,
+            appData.longCard.list[i] ? appData.longCard.list[i].description : `Description ${i + 1}`,
+            appData.longCard.list[i] ? appData.longCard.list[i].link:`Link Text ${i + 1}`,
+            appData.longCard.list[i] ? appData.longCard.list[i].imageUrl:``,
+            appData.longCard.list[i].image
+          );
+          cardList.push(newObj);
+          cardList[i].header = text(
+            `Header ${i + 1}`,
+            appData.longCard.list[i].header,
+            longCardGroupName
+          );
+          cardList[i].description = text(
+            `Description ${i + 1}`,
+            appData.longCard.list[i].description,
+            longCardGroupName
+          );
+          cardList[i].link = text(
+            `Link ${i + 1}`,
+            appData.longCard.list[i].link,
+            longCardGroupName
+          );
+          cardList[i].background = cardBackground;
+          cardList[i].borderColor = cardBorder;
+          cardList[i].imageUrl = text(`Image ${i + 1}`,appData.longCard.list[i].imageUrl, longCardGroupName)
+          longCard.list = cardList;
+      }
+    }
+
     const connectLayoutGroupName = "Connect";
     const connectLayoutComponentLabel = "Do you want the Connect Layout component?";
     let connectLayoutComponent = options(
@@ -644,62 +701,6 @@ storiesOf("templates/Zensar Template", module)
         );
       }
       connectLayoutdata.btnClassName = "btn--transparent";
-    }
-
-
-    const longCardGroupName = "Two Card";
-    const  longCardComponentLabel = "Do you want the two card component?";
-    let longCardComponent = options(
-      longCardComponentLabel,
-      generalOptions,
-      generalOptions.No,
-      inlineRadioOptionObj,
-      longCardGroupName
-    );
-    let createLongObject = (header, description, link, imageUrl, image) => {
-      return {
-        header,
-        description,
-        link,
-        imageUrl,
-        image
-      };
-    };
-  
-    const longCard = {
-      list: []
-    }
-  const cardList = []
-  if(longCardComponent === generalOptions.Yes) {
-
-    for (var i = 0; i < 2; i++) {
-          
-        let newObj = createLongObject(
-          appData.longCard.list[i] ? appData.longCard.list[i].header : `Header ${i + 1}`,
-          appData.longCard.list[i] ? appData.longCard.list[i].description : `Description ${i + 1}`,
-          appData.longCard.list[i] ? appData.longCard.list[i].link:`Link Text ${i + 1}`,
-          appData.longCard.list[i] ? appData.longCard.list[i].imageUrl:``,
-          appData.longCard.list[i].image
-        );
-        cardList.push(newObj)
-        cardList[i].header = text(
-          `Header ${i + 1}`,
-          appData.longCard.list[i].header,
-          longCardGroupName
-        );
-        cardList[i].description = text(
-          `Description ${i + 1}`,
-          appData.longCard.list[i].description,
-          longCardGroupName
-        );
-        cardList[i].link = text(
-          `Link ${i + 1}`,
-          appData.longCard.list[i].link,
-          longCardGroupName
-        );
-        cardList[i].imageUrl = text(`Image ${i + 1}`,appData.longCard.list[i].imageUrl, longCardGroupName)
-        longCard.list = cardList;
-      }
     }
 
     const questionLayoutGroupName = "Question Layout";
@@ -876,7 +877,7 @@ storiesOf("templates/Zensar Template", module)
           logoImage={header.bgImage}
         />
         <div className="home">
-          {carouselComponent === generalOptions.Yes && bannerData.bannerChoice === bannerChoiceOptions.option1 ? (
+          {carouselComponent === generalOptions.Yes && bannerData.bannerChoice === bannerChoiceOptions.HorizontalSlider ? (
             <>
               <BannerCarousel
                 data={bannerData.data}
@@ -886,7 +887,7 @@ storiesOf("templates/Zensar Template", module)
           ) : (
             ""
           )}
-          {carouselComponent === generalOptions.Yes && bannerData.bannerChoice === bannerChoiceOptions.option2 ? (
+          {carouselComponent === generalOptions.Yes && bannerData.bannerChoice === bannerChoiceOptions.VerticalSlider ? (
             <>
               <SpotLight data={bannerData.data} />
             </>

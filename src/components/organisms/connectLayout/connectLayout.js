@@ -8,7 +8,7 @@ const ConnectLayout = props => {
       <div className="connectcont__inner" style={props.contentCustomStyle}>
         <div className="connectcont__left">
           <h1 className="connectcont__heading" style={props.headingCustomStyle}>{props.heading}</h1>
-          <h2 className="connectcont__desc" style={props.descriptionCustomStyle}>{props.description}</h2>
+          <h2 className="connectcont__desc" style={props.descriptionCustomStyle}>${props.description}</h2>
           <Button style={props.buttonBg} className={`connectcont__btn ${props.btnClassName}`} label={props.buttonLabel} />
         </div>
         <div className="connectcont__right">

@@ -1,9 +1,3 @@
-import bannerCarouselImage1 from "../images/banner__carousal__1.jpg";
-import bannerCarouselImage2 from "../images/banner__carousal__2.jpg";
-import bannerCarouselImage3 from "../images/banner__carousal__3.jpg";
-import bannerCarouselImage4 from "../images/banner__carousal__4.jpg";
-import bannerCarouselImage5 from "../images/banner__carousal__5.jpg";
-import bannerCarouselImage6 from "../images/banner__carousal__6.jpg";
 import cardimage1 from "../images/card__image__1.png";
 import cardimage2 from "../images/card__image__2.jpg";
 import cardimage3 from "../images/card__image__3.jpg";
@@ -29,19 +23,22 @@ const colors = {
 
 const App = {
   longCard: {
-    
     list: [
       {
-        header: "Client portals",
-        description: `Access our range of online tools and portals designed to help our clients seize opportunities to take their business to the next level.`,
-        link: `Login into your account`,
+        header: "Heading",
+        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non ex porttitor, accumsan augue quis, vestibulum mauris. Nunc aliquam sagittis turpis vel semper.`,
+        link: `Link`,
         imageUrl: '',
+        background: colors.blue,
+        borderColor: colors.blue
       },
       {
-        header: "Professional careers",
-        description: `Your world of opportunity starts here. Realise your full potential and join our diverse global team.`,
-        link: `Roles at Vistra`,
-        imageUrl: 'https://www.vistra.com//sites/default/files/2019-03/Careers%20block.jpg',
+        header: "Heading",
+        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non ex porttitor, accumsan augue quis, vestibulum mauris. Nunc aliquam sagittis turpis vel semper.`,
+        link: `Link`,
+        imageUrl: '',
+        background: colors.blue,
+        borderColor: colors.blue
       }
     ]
   },

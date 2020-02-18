@@ -118,7 +118,7 @@
                     display: none
                 }
                 &:nth-child(1), &:nth-child(4), &:nth-child(5){
-                    flex-basis: 65%!important;
+                    flex-basis: 68%!important;
                     display: flex;
                     overflow: hidden;
                     .trendcard__bigdesc{
@@ -128,6 +128,12 @@
                         flex-basis: 50%;
                         overflow: hidden;
                     }
+                    .trendcard__img{
+                        min-height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        object-position: top;
+                    }
                     .trendcard__infomsg{
                         flex-basis: 50%;
                         overflow: hidden;
@@ -135,14 +141,13 @@
                 }
             }
             .trendcard__imgcont{
-                width: 50%;
                 margin-bottom: 0;
             }
             .trendcard__label{
                 display: none;
             }
             .trendcard__infomsg{
-                padding: 20px;
+                padding: 38px 74px 38px 40px;
             }
             .trendcard__insightlabel{
                 padding: 10px;

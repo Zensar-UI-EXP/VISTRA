@@ -6,6 +6,9 @@
     width: 100%;
     flex-wrap: wrap;
   }
+  &__content{
+    border-top: 4px solid #261138;
+  }
   &__header {
     font-size: 2rem;
     height: auto;

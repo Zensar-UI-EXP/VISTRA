@@ -7,7 +7,10 @@ const longCard = props => {
       {props.list.map((item, index) => (
         <div key={index} className="longcard__content" style={{backgroundImage: `url(${item.imageUrl})`, backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "50% 50%",}}>
+        backgroundPosition: "50% 50%",
+        backgroundColor: item.background, 
+        borderColor: item.borderColor}
+        }>
           <div>
             <p className="longcard__header">{item.header}</p>
           </div>
