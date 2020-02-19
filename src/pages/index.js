@@ -34,6 +34,7 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Header siteTitle={data.site.siteMetadata.title} {...appData.header} />
       <div className="home">
+        <SpotLight {...appData.banner} />
         <InfoLayout {...appData.infoLayout} />
         <TrendingCardView {...appData.trendcard} />
         <LongCard {...appData.longCard} />
