@@ -16,6 +16,14 @@
             line-height: 1.2em;
             margin: 30px 0;
             font-family: $font--latoregular;
+            &:before {
+                content: "";
+                height: 1px;
+                display: block;
+                background-color: #a39382;
+                margin-bottom: 30px;
+                width: 70px;
+            }
         }
         &desc{
             font-size: 24px;
@@ -46,6 +54,31 @@
             font-size: 16px;
             color: $text--white;
             line-height: 1.5em;
+        }
+    }
+}
+.btn{
+    &--link{
+        align-items: center!important;
+        color: #fff!important;
+        display: flex!important;
+        font-size: 1rem!important;
+        margin: 20px 0!important;
+        background: transparent!important;
+        padding-left: 0!important;
+        &:after {
+            background-image: url(https://www.vistra.com/themes/custom/vistra/src/images/icons/arrow-right-white.svg)!important;
+            background-repeat: no-repeat!important;
+            background-size: 16px 16px!important;
+            background-size: contain!important;
+            content: ""!important;
+            display: inline-block!important;
+            height: 16px!important;
+            margin-left: 10px!important;
+            margin-right: 10px!important;
+            width: 16px!important;
+            transform: skew(0deg)!important;
+            position: static!important;
         }
     }
 }

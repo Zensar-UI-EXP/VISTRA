@@ -640,7 +640,7 @@ storiesOf("templates/Zensar Template", module)
       );
       connectLayoutdata.overallCustomStyle = {background: backgroundColor};
       let contentWidth = htmlDecode(
-        number("onnect Layout Width", 90, {
+        number("Connect Layout Width", 90, {
             range: true,
             min: 0,
             max: 100,
@@ -716,74 +716,102 @@ storiesOf("templates/Zensar Template", module)
       leftcontent: {},
       rightcontent: {},
       overallCustomStyle: {},
-      contentCustomStyle: {}
+      contentCustomStyle: {},
+      descriptionColor: {}
+    };
+    if (questionLayoutComponent === generalOptions.Yes) {
+      questionLayout.overallCustomStyle.background = text(
+        `Layout Background`,
+        `${appData.questionLayout.overallCustomStyle.background}`,
+        questionLayoutGroupName
+      );
+      let contentWidth = htmlDecode(
+        number("Layout content width", 90, {
+            range: true,
+            min: 0,
+            max: 100,
+            step: 5
+          }, 
+          questionLayoutGroupName)
+      );
+      questionLayout.contentCustomStyle = {width: contentWidth + "%"};
+      questionLayout.leftcontent.heading = text(
+        `Left Header`,
+        appData.questionLayout.leftcontent.heading,
+        questionLayoutGroupName
+      );
+      questionLayout.leftcontent.description = text(
+        `Left Description`,
+        appData.questionLayout.leftcontent.description,
+        questionLayoutGroupName
+      );
+      questionLayout.descriptionColor.color = text(
+        `Description color`,
+        `#FFFFFF`,
+        questionLayoutGroupName
+      );
+      questionLayout.leftcontent.buttonLabel = text(
+        `Left Button Label`,
+        appData.questionLayout.leftcontent.buttonLabel,
+        questionLayoutGroupName
+      );
+      questionLayout.leftcontent.callLink = text(
+        `Left Call Link`,
+        appData.questionLayout.leftcontent.callLink,
+        questionLayoutGroupName
+      );
+      questionLayout.rightcontent.heading = text(
+        `Right Header`,
+        appData.questionLayout.rightcontent.heading,
+        questionLayoutGroupName
+      );
+      questionLayout.rightcontent.description = text(
+        `Right Description`,
+        appData.questionLayout.rightcontent.description,
+        questionLayoutGroupName
+      );
+      questionLayout.rightcontent.buttonLabel = text(
+        `Right Button Label`,
+        appData.questionLayout.rightcontent.buttonLabel,
+        questionLayoutGroupName
+      );
+      questionLayout.rightcontent.callLink = text(
+        `Right Call Link`,
+        appData.questionLayout.rightcontent.callLink,
+        questionLayoutGroupName
+      );
     }
-    questionLayout.leftcontent.heading = text(
-      `Left Header`,
-      appData.questionLayout.leftcontent.heading,
-      questionLayoutGroupName
-    );
-    questionLayout.leftcontent.description = text(
-      `Left Description`,
-      appData.questionLayout.leftcontent.description,
-      questionLayoutGroupName
-    );
-    questionLayout.leftcontent.buttonLabel = text(
-      `Left Button Label`,
-      appData.questionLayout.leftcontent.buttonLabel,
-      questionLayoutGroupName
-    );
-    questionLayout.leftcontent.callLink = text(
-      `Left Call Link`,
-      appData.questionLayout.leftcontent.callLink,
-      questionLayoutGroupName
-    );
-    questionLayout.rightcontent.heading = text(
-      `Right Header`,
-      appData.questionLayout.rightcontent.heading,
-      questionLayoutGroupName
-    );
-    questionLayout.rightcontent.description = text(
-      `Right Description`,
-      appData.questionLayout.rightcontent.description,
-      questionLayoutGroupName
-    );
-    questionLayout.rightcontent.buttonLabel = text(
-      `Right Button Label`,
-      appData.questionLayout.rightcontent.buttonLabel,
-      questionLayoutGroupName
-    );
-    questionLayout.rightcontent.callLink = text(
-      `Right Call Link`,
-      appData.questionLayout.rightcontent.callLink,
-      questionLayoutGroupName
-    );
-    questionLayout.overallCustomStyle.background = text(
-      `list Footer Background`,
-      `${appData.questionLayout.overallCustomStyle.background}`,
-      questionLayoutGroupName
-    )
-    questionLayout.contentCustomStyle.width  = text(
-      `list Footer content width`,
-      `${appData.questionLayout.contentCustomStyle.width}`,
-      questionLayoutGroupName
-    )
-
-    const ListFooterGroupName = "List Footer";
-    const sectionListLabel = "Number of List Footer"
-    const sectionListDefault = 4
+    
+    const ListFooterGroupName = "Footer";
+    const sectionListLabel = "Number of List Footer";
+    const sectionListDefault = 5;
     const sectionListOption = {
       range: false,
       min: 1,
       max: 5,
       step: 1,
-    }
+    };
+    let listFooterBackground = text(
+      `Footer Background`,
+      `${appData.listFooter.overallCustomStyle.background}`,
+      ListFooterGroupName
+    );
+    let listFootercontentCustomStyle = htmlDecode(
+      number("Footer content width", 90, {
+          range: true,
+          min: 0,
+          max: 100,
+          step: 5
+        }, 
+        ListFooterGroupName)
+    );
+    
     const sectionListOutput = number(sectionListLabel, sectionListDefault, sectionListOption, ListFooterGroupName)
     const sectionList = []
     for (var j = 0; j < sectionListOutput; j++) {
       sectionList.push({ heading: (appData.listFooter.sectionList[j] ? appData.listFooter.sectionList[j].heading : `Header ${ j + 1}`), linklist: [] })
       sectionList[j].heading = text(
-            `Header ${ j + 1}`,
+            `Section ${ j + 1}`,
             `${ sectionList[j].heading}`,
             ListFooterGroupName
           )
@@ -795,7 +823,7 @@ storiesOf("templates/Zensar Template", module)
         step: 1,
       }
       let menuListOutput = number(
-        `Header ${ j + 1} - Number of List`,
+        `Section ${ j + 1} - Number of List`,
         menuListDefault,
         menuListNumberOption,
         ListFooterGroupName
@@ -803,26 +831,16 @@ storiesOf("templates/Zensar Template", module)
       for (let i = 0; i < menuListOutput; i++) {
         sectionList[j].linklist.push(appData.listFooter.sectionList[j] ? appData.listFooter.sectionList[j].linklist[i]: `Header ${ j + 1} - List  ${ i + 1} `)
         sectionList[j].linklist[i] = text(
-          `Header ${ j + 1} - List  ${ i + 1} `,
+          `Section ${ j + 1} - Link  ${ i + 1} `,
           `${sectionList[j].linklist[i]}`,
           ListFooterGroupName
         )
       }
     }
 
-    var listFooterBackground = text(
-      `list Footer Background`,
-      `${appData.listFooter.overallCustomStyle.background}`,
-      ListFooterGroupName
-    )
-    var listFootercontentCustomStyle = text(
-      `list Footer content width`,
-      `${appData.listFooter.contentCustomStyle.width}`,
-      ListFooterGroupName
-    )
-    var listFooter =  {
+    let listFooter =  {
       overallCustomStyle: { background:  listFooterBackground },
-      contentCustomStyle: { width: listFootercontentCustomStyle },
+      contentCustomStyle: { width: listFootercontentCustomStyle + "%" },
       sectionList:sectionList
     }
 
