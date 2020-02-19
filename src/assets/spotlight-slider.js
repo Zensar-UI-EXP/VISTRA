@@ -246,6 +246,6 @@ const spotlightSlider = {
 //const disable = ( isMobile.any() || document.body.classList || document.body.classList.indexOf('home') !== -1 );
 
 // spotlightSlider.init('.spotlight-slider', disable);
-setTimeout(function(){
-    spotlightSlider.init('.spotlight-slider');
-}, 3000);
+// setTimeout(function(){
+//     spotlightSlider.init('.spotlight-slider');
+// }, 3000);

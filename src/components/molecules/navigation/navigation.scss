@@ -120,6 +120,9 @@
       max-width: 930px;
       padding: 0px 20px;
     }
+    @include media-breakpoint-down(md) {
+      display: none
+    }
     max-width: 95%;
     margin: auto;
     .navigation {

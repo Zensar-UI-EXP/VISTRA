@@ -7,6 +7,10 @@
         &left, &right{
             width: 50%;
             float: left;
+            @include media-breakpoint-down(md) {
+                float: none;
+                width: 100%;
+            }
         }
         &heading{
             width: 80%;
@@ -24,6 +28,10 @@
                 margin-bottom: 30px;
                 width: 70px;
             }
+            @include media-breakpoint-down(sm) {
+                font-size: 34px;
+                width: 100%;
+            }
         }
         &desc{
             font-size: 24px;
@@ -32,6 +40,9 @@
             font-family: $font--latoregular;
             width: 80%;
             margin: 0 0 20px;
+            @include media-breakpoint-down(sm) {
+                font-size: 20px;
+            }
         }
         &btn{
             padding: 12px 30px;
@@ -49,6 +60,11 @@
             z-index: 1;
             font-family: $font--latoregular;
             border-radius: 0;
+            @include media-breakpoint-down(sm) {
+                padding: 10px 15px !important;
+                font-size: 15px !important;
+            }
+            
         }
         &calllink{
             font-size: 16px;

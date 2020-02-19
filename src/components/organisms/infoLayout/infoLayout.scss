@@ -11,6 +11,9 @@
             line-height: 1.5em;
             padding-bottom: 30px;
             font-family: $font--latoregular;
+            @include media-breakpoint-down(sm) {
+                font-size:18px;
+             }
         }
     }
 }

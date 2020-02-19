@@ -67,7 +67,7 @@ const App = {
       width: "100%",
       margin: "0px"
     },
-    isLiteNavigation: "no",
+    isLiteNavigation: "yes",
     liteNavigationStyle: {
       justifyContent: "flex-end"
     },
