@@ -255,6 +255,8 @@ const App = {
   listFooter: {
     overallCustomStyle: { background: colors.blue },
     contentCustomStyle: { width: `90%` },
+    headingCustomStyle: { color: colors.white},
+    linkCustomStyle: { color: colors.white},
     sectionList: [
       {
         heading: "Solutions",

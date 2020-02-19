@@ -29,3 +29,18 @@
 .path-frontpage.page-type-page{
     height: 100vh;
 }
+@media only screen and (max-width: 920px) {
+    .path-frontpage.page-type-page{
+        height: auto!important;
+    }
+    .spotlight-indicator{
+        display: none!important;
+    }
+    .spotlight{
+        background-color: #363738!important;
+        color: #fff!important;
+        overflow: hidden!important;
+        position: relative!important;
+        z-index: 0!important;
+    }
+}

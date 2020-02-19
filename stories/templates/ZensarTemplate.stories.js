@@ -426,7 +426,7 @@ storiesOf("templates/Zensar Template", module)
         text("Background Color", appData.infoLayout.overallCustomStyle.background, infoLayoutGroupName)
       );
       let contentWidth = htmlDecode(
-        number("Width of the container", appData.infoLayout.contentCustomStyle.width, {
+        number("Width of the container", 90, {
             range: true,
             min: 0,
             max: 100,
@@ -434,8 +434,18 @@ storiesOf("templates/Zensar Template", module)
           }, 
           infoLayoutGroupName)
       );
+      let fontSize = htmlDecode(
+        number("Font Size", 24, {
+            range: true,
+            min: 14,
+            max: 64,
+            step: 2
+          }, 
+          infoLayoutGroupName)
+      );
       infoLayoutData.overallCustomStyle = {background: backgroundColor};
       infoLayoutData.contentCustomStyle = {width: contentWidth + "%"};
+      infoLayoutData.descCustomStyle = {"font-size": fontSize + "px"};
       infoLayoutData.desc = htmlDecode(
         text("Type message desplay in the layout", appData.infoLayout.desc, infoLayoutGroupName)
       );
@@ -796,6 +806,23 @@ storiesOf("templates/Zensar Template", module)
       `${appData.listFooter.overallCustomStyle.background}`,
       ListFooterGroupName
     );
+    let listFooterHeadingColor = text(
+      `Footer Heading Font Color`,
+      `${appData.listFooter.headingCustomStyle.color}`,
+      ListFooterGroupName
+    );
+
+    let listFooterHeadingBorderColor = text(
+      `Footer Heading Border Color`,
+      `${appData.listFooter.headingCustomStyle.color}`,
+      ListFooterGroupName
+    );
+
+    let listFooterLinkColor = text(
+      `Footer Link Color`,
+      `${appData.listFooter.linkCustomStyle.color}`,
+      ListFooterGroupName
+    );
     let listFootercontentCustomStyle = htmlDecode(
       number("Footer content width", 90, {
           range: true,
@@ -841,6 +868,8 @@ storiesOf("templates/Zensar Template", module)
     let listFooter =  {
       overallCustomStyle: { background:  listFooterBackground },
       contentCustomStyle: { width: listFootercontentCustomStyle + "%" },
+      headingCustomStyle: { color: listFooterHeadingColor, "border-color": listFooterHeadingBorderColor },
+      linkCustomStyle: { color: listFooterLinkColor },
       sectionList:sectionList
     }
 

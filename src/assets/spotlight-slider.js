@@ -34,8 +34,12 @@ const spotlightSlider = {
 
   // ADDS the class which activates the normal page scroll 
   addBodyClass: function() {
-    const body = document.body;
-    body.classList.add(spotlightSlider.config.noScrollClass);
+    if (document.querySelector(".slick-slider")) {
+      document.body.classList.remove("no-scroll");
+    } else {
+      const body = document.body;
+      body.classList.add(spotlightSlider.config.noScrollClass);
+    }
   },
 
 
@@ -237,7 +241,6 @@ const spotlightSlider = {
       spotlightSlider.addButtonsEvents();
     }
   }
-
 }
 
 // initializes the spotlight slider
